@@ -7,25 +7,37 @@ body {
     padding: 20px;
 }
 
-header h1 {
-    color: yellow;
-    font-size: 2em;
+header {
+    text-align: left;
+    padding: 10px;
 }
 
-#main-container {
+header h1 a {
+    color: lightyellow;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+#container {
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: auto;
 }
 
-#left, #middle, #right {
-    width: 30%;
+#left, #right {
+    width: 20%;
+    text-align: left;
+    padding: 10px;
+}
+
+#content {
+    width: 55%;
     text-align: left;
 }
 
 h2 {
-    color: yellow;
+    color: lightyellow;
 }
 
 ul {
@@ -44,11 +56,11 @@ ul li:hover {
     text-decoration: underline;
 }
 
-#equation-combination {
-    font-size: 1.3em;
-    margin: 20px;
+.formula-box {
+    font-size: 1.5em;
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
-    border: 1px solid white;
+    border-radius: 5px;
 }
 
 footer {
@@ -57,6 +69,12 @@ footer {
     text-align: center;
     background-color: black;
     color: white;
+}
+
+footer a {
+    color: lightblue;
+    text-decoration: none;
+    font-size: 1.2em;
 }
 
 footer p {
