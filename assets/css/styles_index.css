@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+header h1 {
+    color: yellow;
+    font-size: 2em;
+}
+
+#main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+#left, #middle, #right {
+    width:
