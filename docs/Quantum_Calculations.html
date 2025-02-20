@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>量子力學計算 | Quantum Mechanics Calculations</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <script src="../assets/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>🔬 量子力學計算 | Quantum Mechanics Calculations</h1>
+        <nav>
+            <a href="../index.html">🏠 回首頁 | Home</a> |
+            <a href="GR_Calculations.html">📐 廣義相對論 | General Relativity</a> |
+            <a href="Data_Analysis.html">📊 數據分析 | Data Analysis</a>
+        </nav>
+        <div>
+            🌍 Language: 
+            <select id="language-selector">
+                <option value="zh-TW">繁體中文</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </header>
+
+    <section id="content">
+        <h2 data-lang="qm_title">🧬 量子力學核心公式 | Core Equations of Quantum Mechanics</h2>
+        <p data-lang="qm_desc">
+            量子力學描述微觀世界的物理現象，其核心方程為薛丁格方程：
+            Quantum mechanics describes the physical phenomena of the microscopic world. The core equation is the Schrödinger equation:
+        </p>
+
+        <div class="formula">
+            \[
+            i\hbar \frac{\partial}{\partial t} \Psi (r,t) = \hat{H} \Psi (r,t)
+            \]
+        </div>
+
+        <ul>
+            <li>\( \Psi(r,t) \)：波函數 | Wavefunction</li>
+            <li>\( \hbar \)：約化普朗克常數 | Reduced Planck's constant</li>
+            <li>\( \hat{H} \)：哈密頓算符 | Hamiltonian operator</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>📡 量子糾纏與貝爾不等式 | Quantum Entanglement & Bell's Inequality</h2>
+        <p>量子糾纏態：</p>
+        <div class="formula">
+            \[
+            |\Psi\rangle = \frac{1}{\sqrt{2}} (|01\rangle + |10\rangle)
+            \]
+        </div>
+        <p>貝爾不等式（Bell's Inequality）：</p>
+        <div class="formula">
+            \[
+            S = |E(a,b) - E(a,b')| + |E(a',b) + E(a',b')| \leq 2
+            \]
+        </div>
+    </section>
+
+    <section>
+        <h2>⚛ 測不準原理 & 量子態演化 | Uncertainty Principle & Quantum State Evolution</h2>
+        <h3>1️⃣ **測不準原理 | Heisenberg Uncertainty Principle**</h3>
+        <div class="formula">
+            \[
+            \Delta x \Delta p \geq \frac{\hbar}{2}
+            \]
+        </div>
+
+        <h3>2️⃣ **量子態演化 | Quantum State Evolution**</h3>
+        <div class="formula">
+            \[
+            U(t) = e^{-\frac{i}{\hbar} H t}
+            \]
+        </div>
+    </section>
+
+    <section>
+        <h2>📊 量子實驗數據比對 | Experimental Data Comparison</h2>
+        <p>
+            我們使用 <strong>量子衛星「墨子號」</strong> 的實驗結果來驗證量子糾纏：
+            We use data from the <strong>quantum satellite "Micius"</strong> to verify quantum entanglement:
+        </p>
+        <ul>
+            <li>**墨子號量子實驗 | Micius Satellite Experiment**：在地球兩地進行量子糾纏通信 | Quantum entanglement communication over long distances</li>
+            <li>**測量結果 | Measurement Results**：貝爾不等式被違反，支持量子非定域性 | Violation of Bell's inequality, supporting quantum nonlocality</li>
+        </ul>
+        <img src="https://www.nature.com/articles/nature23675/figures/1" alt="墨子號量子糾纏實驗 | Micius Quantum Experiment" width="500">
+    </section>
+
+    <section>
+        <h2>📚 參考文獻 & 數據來源 | References & Data Sources</h2>
+        <ul>
+            <li>1️⃣ **薛丁格方程 & 量子態演化 | Schrödinger Equation & Quantum State Evolution**：
+                <a href="https://arxiv.org/abs/quant-ph/9709026" target="_blank">arXiv:9709026</a></li>
+            <li>2️⃣ **量子糾纏實驗 & 墨子號數據 | Quantum Entanglement & Micius Satellite Data**：
+                <a href="https://www.nature.com/articles/nature23675" target="_blank">Nature Physics</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 HerShield Field Research. Powered by <a href="https://kruziemc2.github.io/FHe/">HerShield Field</a>.</p>
+    </footer>
+
+    <script src="../assets/lang.js"></script>
+</body>
+</html>
