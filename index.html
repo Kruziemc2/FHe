@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赫爾斯盾場方程 | HerShield Field Equation</title>
+    <link rel="stylesheet" href="assets/css/styles_index.css">
+    <script src="assets/js/equation_solver.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>赫爾斯盾場方程 | HerShield Field Equation</h1>
+        <p>創建者 | Creator: <strong>Kru, YuPin Su.</strong></p>
+    </header>
+
+    <section id="main-container">
+        <div id="left">
+            <h2>赫爾斯盾場方程 | HerShield Equation</h2>
+            <div class="formula-box">
+                $$ F_{He} = \frac{G M}{r^2} + \text{修正項} $$
+            </div>
+        </div>
+
+        <div id="middle">
+            <h2>數學解釋 | Mathematical Derivation</h2>
+            <div id="equation-combination">請選擇一個待解方程 | Select an equation to solve</div>
+        </div>
+
+        <div id="right">
+            <h2>人類待解的方程 | Unsolved Physics Equations</h2>
+            <ul>
+                <li onclick="solveEquation('E=mc^2')">$$ E = mc^2 $$</li>
+                <li onclick="solveEquation('Schrodinger')">$$ \hat{H} \Psi = E \Psi $$</li>
+                <li onclick="solveEquation('Navier-Stokes')">Navier-Stokes 方程</li>
+                <li onclick="solveEquation('Quantum Gravity')">量子引力方程</li>
+                <li onclick="solveEquation('Dark Matter')">暗物質運動方程</li>
+                <li onclick="solveEquation('Time Reversal')">時間反演方程</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 赫盾場研究 | HerShield Field Research</p>
+    </footer>
+
+</body>
+</html>
