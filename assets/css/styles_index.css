@@ -20,4 +20,45 @@ header h1 {
 }
 
 #left, #middle, #right {
-    width:
+    width: 30%;
+    text-align: left;
+}
+
+h2 {
+    color: yellow;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    cursor: pointer;
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: lightblue;
+}
+
+ul li:hover {
+    text-decoration: underline;
+}
+
+#equation-combination {
+    font-size: 1.3em;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+footer p {
+    font-size: 1.2em;
+}
