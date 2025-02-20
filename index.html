@@ -10,25 +10,32 @@
 <body>
 
     <header>
-        <h1>赫爾斯盾場方程 | HerShield Field Equation</h1>
-        <p>創建者 | Creator: <strong>Kru, YuPin Su.</strong></p>
+        <h1><a href="index.html" id="home-link">🏠 回首頁 | Home</a></h1>
     </header>
 
-    <section id="main-container">
-        <div id="left">
+    <section id="container">
+        <aside id="left">
+            <h2>🔍 導覽 | Navigation</h2>
+            <ul>
+                <li><a href="docs/data_dashboard.html">📊 數據庫 | Data Database</a></li>
+                <li><a href="docs/GR_Calculations.html">🌌 廣義相對論計算 | GR Calculations</a></li>
+                <li><a href="docs/Quantum_Calculations.html">🔬 量子力學計算 | Quantum Calculations</a></li>
+                <li><a href="docs/DarkMatter.html">🌠 暗物質計算 | Dark Matter</a></li>
+                <li><a href="docs/HerShield_Field.html">🛡️ 赫爾斯盾場 | HerShield Field</a></li>
+            </ul>
+        </aside>
+
+        <main id="content">
             <h2>赫爾斯盾場方程 | HerShield Equation</h2>
             <div class="formula-box">
                 $$ F_{He} = \frac{G M}{r^2} + \text{修正項} | Correction Terms $$
             </div>
-        </div>
-
-        <div id="middle">
             <h2>數學解釋 | Mathematical Derivation</h2>
             <div id="equation-combination">請選擇一個待解方程 | Select an equation to solve</div>
             <div id="explanation"></div>
-        </div>
+        </main>
 
-        <div id="right">
+        <aside id="right">
             <h2>人類待解的方程 | Unsolved Physics Equations</h2>
             <ul>
                 <li onclick="solveEquation('E=mc^2')">$$ E = mc^2 $$ | 質能方程 | Mass-Energy Equation</li>
@@ -38,11 +45,17 @@
                 <li onclick="solveEquation('Dark Matter')">暗物質運動方程 | Dark Matter Motion Equation</li>
                 <li onclick="solveEquation('Time Reversal')">時間反演方程 | Time Reversal Equation</li>
             </ul>
-        </div>
+        </aside>
     </section>
 
     <footer>
         <p>© 2025 赫盾場研究 | HerShield Field Research</p>
+        <p>
+            <a href="https://www.linkedin.com/in/kru-su-64a681329/">LinkedIn</a> |
+            <a href="https://www.facebook.com/su.kru.376/">Facebook</a> |
+            <a href="https://www.instagram.com/krn2u/">Instagram</a> |
+            📩 Email: kruzi.eemc2@gmail.com
+        </p>
     </footer>
 
 </body>
