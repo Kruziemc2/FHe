@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 if (data.length > 0) {
                     let latest = data[data.length - 1];
-                    if (key === "solarWind") {
+                    if (key === "UlxbY1TIgdhFZkW4FgeIcrOa3Ttb4TVYU4W3nV3S") {
                         document.getElementById("density").innerText = latest.density + " cm³";
                         document.getElementById("speed").innerText = latest.speed + " km/s";
                         document.getElementById("temperature").innerText = latest.temperature + " K";
