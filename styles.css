@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    color: #f1c40f;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin: auto;
+}
+
+.equation-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.equation {
+    max-width: 60%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.sidebar {
+    position: absolute;
+    left: 10px;
+    top: 50px;
+}
+
+.equation-list {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+}
