@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>廣義相對論計算 | General Relativity Calculations</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <script src="../assets/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>📐 廣義相對論計算 | General Relativity Calculations</h1>
+        <nav>
+            <a href="../index.html">🏠 回首頁 | Home</a> |
+            <a href="Data_Analysis.html">📊 數據分析 | Data Analysis</a> |
+            <a href="Quantum_Calculations.html">🔬 量子力學計算 | Quantum Mechanics Calculations</a>
+        </nav>
+        <div>
+            🌍 Language: 
+            <select id="language-selector">
+                <option value="zh-TW">繁體中文</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </header>
+
+    <section id="content">
+        <h2 data-lang="gr_title">🌌 廣義相對論核心公式 | Core Equations of General Relativity</h2>
+        <p data-lang="gr_desc">
+            廣義相對論（GR）描述時空的彎曲及其與能量的相互作用。核心方程是愛因斯坦場方程：
+            General Relativity (GR) describes the curvature of spacetime and its interaction with energy. The core equation is Einstein's field equation:
+        </p>
+
+        <div class="formula">
+            \[
+            R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
+            \]
+        </div>
+
+        <ul>
+            <li>\( R_{\mu\nu} \)：里奇曲率張量 | Ricci curvature tensor</li>
+            <li>\( g_{\mu\nu} \)：度規張量 | Metric tensor</li>
+            <li>\( R \)：標量曲率 | Scalar curvature</li>
+            <li>\( \Lambda \)：宇宙常數 | Cosmological constant</li>
+            <li>\( T_{\mu\nu} \)：能量動量張量 | Energy-momentum tensor</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>🌀 黑洞解 & 時空測地線 | Black Hole Solutions & Geodesics</h2>
+        <p>史瓦西解（Schwarzschild Metric）：</p>
+        <div class="formula">
+            \[
+            ds^2 = -\left( 1 - \frac{2GM}{c^2r} \right) c^2 dt^2 + \frac{dr^2}{1 - \frac{2GM}{c^2r}} + r^2 d\Omega^2
+            \]
+        </div>
+        <p>測試粒子的測地線方程 | Geodesic equation for test particles:</p>
+        <div class="formula">
+            \[
+            \frac{d^2x^\mu}{d\tau^2} + \Gamma^\mu_{\alpha\beta} \frac{dx^\alpha}{d\tau} \frac{dx^\beta}{d\tau} = 0
+            \]
+        </div>
+    </section>
+
+    <section>
+        <h2>🔢 數學推導與計算 | Mathematical Derivations & Computations</h2>
+        <h3>1️⃣ **事件視界半徑 | Schwarzschild Radius**</h3>
+        <div class="formula">
+            \[
+            r_s = \frac{2GM}{c^2}
+            \]
+        </div>
+
+        <h3>2️⃣ **引力紅移 | Gravitational Redshift**</h3>
+        <div class="formula">
+            \[
+            z = \frac{1}{\sqrt{1 - \frac{2GM}{c^2 r}}} - 1
+            \]
+        </div>
+    </section>
+
+    <section>
+        <h2>📊 觀測數據比對 | Observational Data Comparison</h2>
+        <p>
+            我們使用 <strong>事件視界望遠鏡 (EHT)</strong> 的黑洞影像來驗證廣義相對論的預測：
+            We use data from the <strong>Event Horizon Telescope (EHT)</strong> to verify GR predictions:
+        </p>
+        <ul>
+            <li>**EHT 觀測數據 | EHT Observations**：M87* 黑洞影像 | M87* black hole image</li>
+            <li>**計算結果 | Calculated Results**：黑洞影像符合 GR 預測的事件視界大小 | Matches GR predictions</li>
+        </ul>
+        <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/pia23139-blackhole-eventhorizontelescope-20190410.jpg" alt="EHT 黑洞影像 | EHT Black Hole Image" width="500">
+    </section>
+
+    <section>
+        <h2>📚 參考文獻 & 數據來源 | References & Data Sources</h2>
+        <ul>
+            <li>1️⃣ **愛因斯坦場方程 & Schwarzschild 解 | Einstein Field Equations & Schwarzschild Solution**：
+                <a href="https://arxiv.org/abs/1910.05938" target="_blank">arXiv:1910.05938</a></li>
+            <li>2️⃣ **Event Horizon Telescope (EHT) 觀測數據 | EHT Observations**：
+                <a href="https://iopscience.iop.org/article/10.3847/2041-8213/ab0ec7" target="_blank">Astrophysical Journal Letters</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 HerShield Field Research. Powered by <a href="https://kruziemc2.github.io/FHe/">HerShield Field</a>.</p>
+    </footer>
+
+    <script src="../assets/lang.js"></script>
+</body>
+</html>
