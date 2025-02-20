@@ -1,76 +1,93 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-    <img id="combined-equation" class="equation" src="" alt="數學公式圖片">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>赫爾斯盾場方程 | HerShield Equation</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-
     <!-- 回首頁 -->
-    <div class="home-button">
-        <a href="index.html">🏠 回首頁 | Home</a>
+    <div class="header">
+        <a href="index.html" class="home-link">🏠 回首頁 | Home</a>
     </div>
 
-    <!-- 左側導航 -->
+    <!-- 左側導覽 -->
     <div class="sidebar">
-        <h3>🔍 導覽 | Navigation</h3>
+        <h2>🔍 <span class="highlight">導覽 | Navigation</span></h2>
         <ul>
             <li>📊 <a href="data.html">數據庫 | Data Database</a></li>
-            <li>🌌 <a href="gr.html">廣義相對論計算 | GR Calculations</a></li>
-            <li>🔬 <a href="quantum.html">量子力學計算 | Quantum Calculations</a></li>
-            <li>🛸 <a href="darkmatter.html">暗物質計算 | Dark Matter</a></li>
-            <li>🛡 <a href="hershield.html">赫爾斯盾場 | HerShield Field</a></li>
+            <li>🔵 <a href="gr.html">廣義相對論計算 | GR Calculations</a></li>
+            <li>⚛️ <a href="quantum.html">量子力學計算 | Quantum Calculations</a></li>
+            <li>🌀 <a href="dark_matter.html">暗物質計算 | Dark Matter</a></li>
+            <li>🛡️ <a href="hershield.html">赫爾斯盾場 | HerShield Field</a></li>
         </ul>
     </div>
 
-    <!-- 赫盾方程 -->
-    <div class="container">
-        <h1>赫爾斯盾場方程 | HerShield Equation</h1>
-        <img id="main-equation" class="equation" src="assets/equation_fixed_1.png" alt="赫爾斯盾場方程">
-        
-        <h2>數學解析 | Mathematical Derivation</h2>
+    <!-- 主要內容 -->
+    <div class="content">
+        <h1 class="title">赫爾斯盾場方程 | <span class="eng-title">HerShield Equation</span></h1>
+
+        <!-- 赫爾斯盾方程 -->
+        <div class="equation-container">
+            <img id="hershield-equation" src="images/fhe_equation.png" alt="赫爾斯盾場方程">
+        </div>
+
+        <!-- 右側待解方程 -->
+        <div class="unsolved-equations">
+            <h2>人類待解的方程 | <span class="eng-title">Unsolved Physics Equations</span></h2>
+            <ul>
+                <li><a href="#" class="eq-link" data-equation="mass_energy">$$ E = mc^2 $$ | 質能方程 | Mass-Energy Equation</a></li>
+                <li><a href="#" class="eq-link" data-equation="schrodinger">$$ \hat{H} \Psi = E \Psi $$ | 薛丁格方程 | Schrödinger Equation</a></li>
+                <li><a href="#" class="eq-link" data-equation="navier_stokes">Navier-Stokes 方程 | Navier-Stokes Equation</a></li>
+                <li><a href="#" class="eq-link" data-equation="quantum_gravity">量子引力方程 | Quantum Gravity Equation</a></li>
+                <li><a href="#" class="eq-link" data-equation="dark_matter_motion">暗物質運動方程 | Dark Matter Motion Equation</a></li>
+                <li><a href="#" class="eq-link" data-equation="time_reversal">時間反演方程 | Time Reversal Equation</a></li>
+            </ul>
+        </div>
+
+        <!-- 數學解析區塊 -->
+        <h2>數學解析 | <span class="eng-title">Mathematical Derivation</span></h2>
         <p>請選擇一個待解方程 | Select an equation to solve</p>
 
-        <!-- 這裡會動態插入數學公式 -->
-        <div id="combined-equation-container" class="equation-box">
-            <h3 id="combined-title">組合方程 | Combined Equation</h3>
-            <img id="combined-equation" class="equation" src="" alt="">
+        <div class="combined-equation">
+            <h3>組合方程 | <span class="eng-title">Combined Equation</span></h3>
+            <img id="combined-equation-img" src="images/default.png" alt="組合方程">
         </div>
 
-        <!-- 說明區塊 -->
-        <div id="explanation">
-            <h3>解析 | Explanation</h3>
-            <p id="explanation-text">請選擇一個方程進行組合解析...</p>
-        </div>
-    </div>
+        <!-- 解釋區塊 -->
+        <h2>解析 | <span class="eng-title">Explanation</span></h2>
+        <p id="explanation-text">請選擇一個方程來查看解析</p>
 
-    <!-- 右側方程選單 -->
-    <div class="equation-list">
-        <h2>人類待解的方程 | Unsolved Physics Equations</h2>
-        <ul>
-            <li><a href="#" onclick="showEquation('equation_fixed_2.png', '質能方程 E = mc^2', '質能關係與赫盾場的影響')">$$ E = mc^2 $$ | 質能方程 | Mass-Energy Equation</a></li>
-            <li><a href="#" onclick="showEquation('equation_fixed_3.png', '薛丁格方程', '赫盾場對量子態影響的修正')">$$ \hat{H} \Psi = E \Psi $$ | 薛丁格方程 | Schrödinger Equation</a></li>
-            <li><a href="#" onclick="showEquation('equation_fixed_4.png', 'Navier-Stokes 方程', '流體動力學中的赫盾修正項')">Navier-Stokes 方程 | Navier-Stokes Equation</a></li>
-            <li><a href="#" onclick="showEquation('equation_fixed_5.png', '量子引力方程', '赫盾場與時空結構的交互作用')">量子引力方程 | Quantum Gravity Equation</a></li>
-            <li><a href="#" onclick="showEquation('equation_fixed_6.png', '暗物質運動方程', '赫盾場對暗物質分布的影響')">暗物質運動方程 | Dark Matter Motion Equation</a></li>
-            <li><a href="#" onclick="showEquation('equation_fixed_7.png', '時間反演方程', '赫盾場如何影響時間回溯')">時間反演方程 | Time Reversal Equation</a></li>
-        </ul>
-    </div>
+        <!-- 參數對照表 -->
+        <h2>參數對照表 | <span class="eng-title">Parameter Mapping</span></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>符號 | Symbol</th>
+                    <th>描述 | Description</th>
+                    <th>實際數據 | Actual Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>α</td><td>場耦合常數 | Field coupling constant</td><td id="alpha-data">載入中...</td></tr>
+                <tr><td>B</td><td>磁場強度 | Magnetic field strength</td><td id="B-data">載入中...</td></tr>
+                <tr><td>λ</td><td>赫爾斯盾場波長 | HerShield wavelength</td><td id="lambda-data">載入中...</td></tr>
+                <tr><td>ρ_DM</td><td>暗物質密度 | Dark matter density</td><td id="rho-data">載入中...</td></tr>
+                <tr><td>v</td><td>暗物質粒子速度 | Dark matter particle velocity</td><td id="v-data">載入中...</td></tr>
+                <tr><td>r</td><td>與中心的距離 | Distance from the center</td><td id="r-data">載入中...</td></tr>
+            </tbody>
+        </table>
 
-    <!-- 頁腳 -->
-    <footer>
-        <p>© 2025 赫爾斯盾場研究 | HerShield Field Research</p>
-        <p>
+        <!-- 底部聯絡資訊 -->
+        <footer>
+            <p>&copy; 2025 赫爾斯盾場研究 | HerShield Field Research</p>
             <a href="https://www.linkedin.com/in/kru-su-64a681329/">LinkedIn</a> |
             <a href="https://www.facebook.com/su.kru.376/">Facebook</a> |
             <a href="https://www.instagram.com/krn2u/">Instagram</a> |
             📧 Email: kruzi.eemc2@gmail.com
-        </p>
-    </footer>
-
+        </footer>
+    </div>
 </body>
 </html>
