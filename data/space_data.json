@@ -1,0 +1,24 @@
+{
+  "solar_wind": {
+    "density": "載入中...",
+    "speed": "載入中...",
+    "temperature": "載入中..."
+  },
+  "magnetic_field": {
+    "earth_bx": "載入中...",
+    "earth_by": "載入中...",
+    "earth_bz": "載入中..."
+  },
+  "high_energy_particles": {
+    "cosmic_rays": "載入中...",
+    "solar_protons": "載入中..."
+  },
+  "gravitational_waves": {
+    "LIGO": "載入中...",
+    "Virgo": "載入中..."
+  },
+  "dark_matter": {
+    "density_profile": "載入中...",
+    "rotation_curve": "載入中..."
+  }
+}
