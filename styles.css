@@ -9,31 +9,22 @@ h1, h2 {
     color: yellow;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
 a {
     color: lightblue;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-.container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin: 20px;
-}
-
-.equation-section img {
-    width: 300px;
-}
-
-.calculation-section img {
-    width: 250px;
-}
-
-footer {
-    margin-top: 50px;
-    font-size: 14px;
+.equation-img {
+    width: 40%; /* 縮小圖片 */
+    display: block;
+    margin: 20px auto;
 }
