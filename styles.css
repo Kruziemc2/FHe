@@ -1,40 +1,39 @@
 body {
     background-color: black;
-    color: #f1c40f;
+    color: white;
     font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1, h2 {
+    color: yellow;
+}
+
+a {
+    color: lightblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .container {
-    text-align: center;
-    margin: auto;
-}
-
-.equation-box {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px;
 }
 
-.equation {
-    max-width: 60%;
-    height: auto;
-    margin: 10px 0;
+.equation-section img {
+    width: 300px;
 }
 
-.sidebar {
-    position: absolute;
-    left: 10px;
-    top: 50px;
-}
-
-.equation-list {
-    position: absolute;
-    right: 10px;
-    top: 50px;
+.calculation-section img {
+    width: 250px;
 }
 
 footer {
-    text-align: center;
     margin-top: 50px;
+    font-size: 14px;
 }
