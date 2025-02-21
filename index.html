@@ -16,20 +16,41 @@
         h1, h2, h3 {
             color: #FFD700; /* 金黃色標題 */
         }
+        #equationDisplay {
+            margin: auto;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em; /* 放大方程 */
+        }
+        #navigation, #equationList {
+            text-align: left;
+            padding-left: 20px;
+        }
+        img {
+            max-width: 400px;
+            margin-top: 20px;
+            filter: invert(100%);
+        }
         .container {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             padding: 20px;
         }
-        .math-section, .explanation-section {
-            width: 50%;
+        .math-section {
+            width: 45%;
             text-align: left;
             padding: 10px;
         }
-        .equation-image {
-            max-width: 500px;
-            filter: invert(100%); /* 讓數學公式在黑色背景上可見 */
+        .explanation-section {
+            width: 45%;
+            text-align: left;
+            padding: 10px;
+        }
+        .answer-section {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -39,32 +60,56 @@
     <h1>赫爾斯盾場方程 | HerShield Equation</h1>
     <p>🚀 **核心方程**：</p>
     <div id="equationDisplay">
-        <img id="equationImage" src="assets/FHe.svg" alt="HerShield Field Equation" class="equation-image">
+        <img src="assets/FHe.svg" alt="HerShield Field Equation">
     </div>
 </header>
+
+<section id="navigation">
+    <h2>🔍 導覽 | Navigation</h2>
+    <ul>
+        <li>📂 <a href="docs/data_dashboard.html">數據庫 | Data Database</a></li>
+        <li>🔬 <a href="docs/GR_Calculations.html">廣義相對論計算 | GR Calculations</a></li>
+        <li>🧬 <a href="docs/Quantum_Calculations.html">量子力學計算 | Quantum Calculations</a></li>
+        <li>🖊️ <a href="#">暗物質計算 | Dark Matter</a></li>
+        <li>🛡️ <a href="#">赫爾斯盾場 | HerShield Field</a></li>
+    </ul>
+</section>
 
 <section id="equationList">
     <h2>📜 人類待解的方程 | Unsolved Physics Equations</h2>
     <ul>
-        <li><a href="#" onclick="changeEquation('assets/EField.svg', '質能方程 | Mass-Energy Equation')">📄 質能方程 | Mass-Energy Equation</a></li>
-        <li><a href="#" onclick="changeEquation('assets/Schrödinger_Equation.svg', '薛定諤方程 | Schrödinger Equation')">📄 薛定諤方程 | Schrödinger Equation</a></li>
-        <li><a href="#" onclick="changeEquation('assets/Navier-Stokes.svg', 'Navier-Stokes 方程')">📄 Navier-Stokes 方程</a></li>
-        <li><a href="#" onclick="changeEquation('assets/TRSymmetry.svg', '量子引力方程 | Quantum Gravity Equation')">📄 量子引力方程 | Quantum Gravity Equation</a></li>
-        <li><a href="#" onclick="changeEquation('assets/Dm_motion.svg', '暗物質運動方程 | Dark Matter Motion Equation')">📄 暗物質運動方程 | Dark Matter Motion Equation</a></li>
-        <li><a href="#" onclick="changeEquation('assets/Schrödinger_time.svg', '時間反演方程 | Time Reversal Equation')">📄 時間反演方程 | Time Reversal Equation</a></li>
+        <li><a href="#" onclick="changeEquation('EField.svg', '質能方程')">質能方程 | Mass-Energy Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Schrödinger_Equation.svg', '薛定諤方程')">薛定諤方程 | Schrödinger Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Navier-Stokes.svg', 'Navier-Stokes 方程')">Navier-Stokes 方程</a></li>
+        <li><a href="#" onclick="changeEquation('TRSymmetry.svg', '量子引力方程')">量子引力方程 | Quantum Gravity Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Dm_motion.svg', '暗物質運動方程')">暗物質運動方程 | Dark Matter Motion Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Schrödingertime.svg', '時間反演方程')">時間反演方程 | Time Reversal Equation</a></li>
     </ul>
 </section>
 
 <div class="container">
     <section class="math-section">
-        <h2>📐 數學解析 | Mathematical Derivation</h2>
-        <p id="mathDerivation">請點選上方連結，查看數學方程。</p>
+        <h2>📐 核心方程 ➜ 帶入組合 ➜ 計算演算 ➜ 右側答案</h2>
+        <p id="mathDerivation">請選擇一個待解方程 | Select an equation to solve</p>
+        <h3>符號解析 | Symbol Explanation</h3>
+        <p id="symbolExplanation">這裡將顯示選定方程的每個符號代表什麼。</p>
+        <h3>應用範圍 | Application</h3>
+        <p id="applicationExplanation">這裡將顯示該方程的應用場景。</p>
     </section>
 
     <section class="explanation-section">
         <h2>📖 解析 | Explanation</h2>
-        <p id="equationExplanation">點擊數學公式時，這裡會顯示該方程的解析和應用。</p>
+        <p id="equationExplanation">請選擇一個方程來查看解析</p>
+        <h3>解開什麼？ | What does this equation solve?</h3>
+        <p id="solutionExplanation">這裡將顯示該方程可以解決的物理問題。</p>
+        <h3>赫盾場的關聯 | HerShield Field Connection</h3>
+        <p id="HerShieldConnection">這裡將解釋該方程如何與赫爾斯盾場相關。</p>
     </section>
+</div>
+
+<div class="answer-section">
+    <h2>✅ 計算結果 | Answer</h2>
+    <p id="answerResult">計算完成後，答案會顯示在這裡。</p>
 </div>
 
 <footer>
@@ -73,10 +118,30 @@
 </footer>
 
 <script>
-    function changeEquation(imageSrc, equationName) {
-        document.getElementById("equationImage").src = imageSrc;
-        document.getElementById("mathDerivation").innerText = "目前顯示的數學公式：" + equationName;
-        document.getElementById("equationExplanation").innerText = equationName + " 是物理學中待解的問題，正進行解析與驗證。";
+    function changeEquation(equationFile, equationName) {
+        document.getElementById("equationDisplay").innerHTML =
+            `<img src="assets/${equationFile}" alt="${equationName}">`;
+
+        document.getElementById("mathDerivation").innerHTML =
+            `現在顯示的是：${equationName} 的數學解析`;
+
+        document.getElementById("equationExplanation").innerHTML =
+            `${equationName} 是當前研究的關鍵物理方程，正在進行解析與驗證。`;
+
+        document.getElementById("symbolExplanation").innerHTML =
+            `這裡會列出 ${equationName} 的所有變數代表的意義`;
+
+        document.getElementById("applicationExplanation").innerHTML =
+            `${equationName} 主要應用在 XXXX 領域，例如 XXXX`;
+
+        document.getElementById("solutionExplanation").innerHTML =
+            `這個方程解開了 XXXX 問題，並在 XXXX 領域有所應用。`;
+
+        document.getElementById("HerShieldConnection").innerHTML =
+            `${equationName} 可能與赫盾場的 XXXX 機制有關，透過 XXXX 影響 XXXX。`;
+
+        document.getElementById("answerResult").innerHTML =
+            `計算結果：XXX (後續將由數學計算模組補充)`;
     }
 </script>
 
