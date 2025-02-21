@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>實時觀測數據 | Data Analysis & Real-Time Space Data</title>
+    <title>實時觀測數據 | Real-Time Space Data</title>
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -22,7 +22,7 @@
 <body>
 
 <header>
-    <h1>實時觀測數據 | Data Analysis & Real-Time Space Data</h1>
+    <h1>🌌 實時觀測數據 | Real-Time Space Data</h1>
     <div class="nav">
         🔙 <a href="../index.html">首頁 | Home</a> |
         ☀️ <a href="Solar_Data.html">太陽數據 | Solar Data</a> |
@@ -42,14 +42,14 @@
     <div class="box">
         <h2>🌞 太陽風數據 | Solar Wind Data</h2>
         <iframe src="https://services.swpc.noaa.gov/images/ace-swepam-density.gif" width="100%" height="300px"></iframe>
-        <p>☀️ 太陽風速度: <span id="solar_wind_speed">Loading...</span> km/s</p>
-        <p>⚡ 電漿密度: <span id="solar_wind_density">Loading...</span> p/cm³</p>
+        <p>☀️ <b>太陽風速度 | Solar Wind Speed:</b> <span id="solar_wind_speed">Loading...</span> km/s</p>
+        <p>⚡ <b>電漿密度 | Plasma Density:</b> <span id="solar_wind_density">Loading...</span> p/cm³</p>
     </div>
 
     <div class="box">
         <h2>🌍 地球磁場變化 | Earth's Magnetic Field</h2>
         <iframe src="https://services.swpc.noaa.gov/images/planetary-k-index.gif" width="100%" height="300px"></iframe>
-        <p>🌎 K 指數: <span id="k_index">Loading...</span></p>
+        <p>🌎 <b>K 指數 | Kp Index:</b> <span id="k_index">Loading...</span></p>
     </div>
 </div>
 
@@ -61,7 +61,7 @@
 
     <div class="box">
         <h2>🚀 國際太空站位置 | ISS Live Location</h2>
-        <iframe src="https://www.n2yo.com/iframe/?s=25544&c=iss" width="100%" height="300px"></iframe>
+        <iframe src="https://www.heavens-above.com/orbitdisplay.aspx?satid=25544&width=600&height=600" width="100%" height="300px"></iframe>
     </div>
 </div>
 
@@ -70,7 +70,7 @@
 
     async function fetchData() {
         try {
-            const apiKey = "UlxbY1TIgdhFZkW4FgeIcrOa3Ttb4TVYU4W3nV3S";  // 替換為你的 API Key
+            const apiKey = "YOUR_API_KEY";  // 替換為你的 API Key
 
             // 1. 獲取太陽風數據
             const solarWindUrl = `https://api.nasa.gov/DONKI/FLR?api_key=${apiKey}`;
@@ -117,11 +117,6 @@
     setInterval(fetchData, 15000);
     fetchData();
 </script>
-
-<footer class="contact">
-    <p>創作者 | Author: Kru, Yupin Su.</p>
-    <p>📧 Email: kruzi.eemc2@gmail.com | 🔗 <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
-</footer>
 
 </body>
 </html>
