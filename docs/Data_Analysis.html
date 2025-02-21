@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>實時觀測數據 | Data Analysis & Real-Time Space Data</title>
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
@@ -43,7 +41,6 @@
 <div class="container">
     <div class="box">
         <h2>🌞 太陽風數據 | Solar Wind Data</h2>
-        <p>來自 NASA ACE 衛星 (Advanced Composition Explorer) 的最新數據：</p>
         <iframe src="https://services.swpc.noaa.gov/images/ace-swepam-density.gif" width="100%" height="300px"></iframe>
         <p>☀️ 太陽風速度: <span id="solar_wind_speed">Loading...</span> km/s</p>
         <p>⚡ 電漿密度: <span id="solar_wind_density">Loading...</span> p/cm³</p>
@@ -51,7 +48,6 @@
 
     <div class="box">
         <h2>🌍 地球磁場變化 | Earth's Magnetic Field</h2>
-        <p>來自 NOAA 的地磁指數圖表：</p>
         <iframe src="https://services.swpc.noaa.gov/images/planetary-k-index.gif" width="100%" height="300px"></iframe>
         <p>🌎 K 指數: <span id="k_index">Loading...</span></p>
     </div>
@@ -65,51 +61,59 @@
 
     <div class="box">
         <h2>🚀 國際太空站位置 | ISS Live Location</h2>
-        <p>即時追蹤國際太空站 (ISS) 位置：</p>
         <iframe src="https://www.n2yo.com/iframe/?s=25544&c=iss" width="100%" height="300px"></iframe>
     </div>
 </div>
 
 <script>
+    let sunspotChart;
+
     async function fetchData() {
-        // API Key
-        const apiKey = "UlxbY1TIgdhFZkW4FgeIcrOa3Ttb4TVYU4W3nV3S";  // 請替換為你的 API Key
+        try {
+            const apiKey = "UlxbY1TIgdhFZkW4FgeIcrOa3Ttb4TVYU4W3nV3S";  // 替換為你的 API Key
 
-        // 1. 獲取太陽風數據 (Solar Wind Data)
-        const solarWindUrl = `https://api.nasa.gov/DONKI/FLR?api_key=${apiKey}`;
-        let solarWindResponse = await fetch(solarWindUrl);
-        let solarWindData = await solarWindResponse.json();
-        document.getElementById("solar_wind_speed").innerText = solarWindData[0]?.speed || "N/A";
-        document.getElementById("solar_wind_density").innerText = solarWindData[0]?.density || "N/A";
+            // 1. 獲取太陽風數據
+            const solarWindUrl = `https://api.nasa.gov/DONKI/FLR?api_key=${apiKey}`;
+            let solarWindResponse = await fetch(solarWindUrl);
+            let solarWindData = await solarWindResponse.json();
+            document.getElementById("solar_wind_speed").innerText = solarWindData[0]?.speed || "N/A";
+            document.getElementById("solar_wind_density").innerText = solarWindData[0]?.density || "N/A";
 
-        // 2. 獲取地磁場 K 指數 (Kp Index)
-        const geomagneticUrl = `https://api.nasa.gov/DONKI/GST?api_key=${apiKey}`;
-        let geoResponse = await fetch(geomagneticUrl);
-        let geoData = await geoResponse.json();
-        document.getElementById("k_index").innerText = geoData[0]?.kp_index || "N/A";
+            // 2. 獲取地磁場 K 指數
+            const geomagneticUrl = `https://api.nasa.gov/DONKI/GST?api_key=${apiKey}`;
+            let geoResponse = await fetch(geomagneticUrl);
+            let geoData = await geoResponse.json();
+            document.getElementById("k_index").innerText = geoData[0]?.kp_index || "N/A";
 
-        // 3. 更新太陽黑子數據
-        updateSunspotChart();
+            // 3. 更新太陽黑子數據
+            updateSunspotChart();
+        } catch (error) {
+            console.error("數據獲取錯誤:", error);
+        }
     }
 
     function updateSunspotChart() {
-        let ctx = document.getElementById('sunspot_chart').getContext('2d');
-        let sunspotChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-                datasets: [{
-                    label: 'Sunspot Number',
-                    data: [45, 30, 60, 80, 75, 50], // 這些數據應該來自 API
-                    borderColor: 'yellow',
-                    borderWidth: 2
-                }]
-            },
-            options: { responsive: true }
-        });
+        if (!sunspotChart) {
+            let ctx = document.getElementById('sunspot_chart').getContext('2d');
+            sunspotChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+                    datasets: [{
+                        label: 'Sunspot Number',
+                        data: [45, 30, 60, 80, 75, 50], // 這些數據應該來自 API
+                        borderColor: 'yellow',
+                        borderWidth: 2
+                    }]
+                },
+                options: { responsive: true }
+            });
+        } else {
+            sunspotChart.data.datasets[0].data = [50, 40, 65, 85, 80, 55]; // 更新數據
+            sunspotChart.update();
+        }
     }
 
-    // 每 15 秒更新數據
     setInterval(fetchData, 15000);
     fetchData();
 </script>
