@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+    function changeEquation(equationFile) {
+        document.getElementById("equationDisplay").innerHTML =
+            `<img src="assets/${equationFile}" alt="Equation" width="300px">`;
+    }
     function updateEquation(equationId) {
         const equationImages = [
             "assets/equations/equation_fixed_1.png",
