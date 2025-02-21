@@ -10,65 +10,87 @@
     <style>
         body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
         h1, h2 { color: white; }
-        p { color: white; max-width: 800px; margin: 0 auto; text-align: justify; }
+        p { color: white; max-width: 900px; margin: 0 auto; text-align: justify; }
         .math { text-align: center; color: white; font-size: 1.3em; margin: 20px 0; }
         .contact { margin-top: 40px; }
         .contact a { color: #1e90ff; margin: 0 10px; text-decoration: none; }
-        .nav-links { margin-top: 20px; }
-        .nav-links a { color: #1e90ff; margin: 0 15px; text-decoration: none; }
+        .nav { text-align: center; margin-bottom: 20px; }
+        .nav a { color: #00bfff; margin: 0 15px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Navier-Stokes 方程與赫爾斯盾場 | Navier-Stokes Equation & HerShield Field</h1>
+    <div class="nav">
+        🔙 <a href="../index.html">首頁 | Home</a> |
+        📘 <a href="GR_Calculations.html">廣義相對論計算 | GR Calculations</a> |
+        🔬 <a href="Quantum_Calculations.html">量子力學計算 | Quantum Mechanics</a>
+    </div>
 </header>
-
-<nav class="nav-links">
-    <a href="../index.html">🏠 首頁 | Home</a>
-    <a href="GR_Calculations.html">廣義相對論計算 | GR Calculations</a>
-    <a href="Quantum_Calculations.html">量子力學計算 | Quantum Mechanics</a>
-</nav>
 
 <section>
     <h2>📌 摘要 | Abstract</h2>
     <p>
-        Navier-Stokes 方程是描述流體運動的基本方程，廣泛應用於空氣動力學、氣體動力學、等離子體物理等領域：
+        Navier-Stokes 方程 (Navier-Stokes Equations) 是描述流體運動的核心方程，適用於從空氣動力學、等離子體物理到星際氣體運動的各種領域：
     </p>
     <div class="math">
-        $$ \rho \left( \frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} \right) = - \nabla p + \mu \nabla^2 \mathbf{u} + \mathbf{f} $$
+        $$ \rho \left( \frac{\partial u}{\partial t} + u \cdot \nabla u \right) = -\nabla p + \mu \nabla^2 u + f $$
     </div>
     <p>
-        然而，該方程的解析解仍然是一個數學難題，特別是在湍流 (Turbulence) 的情況下。赫爾斯盾場 (HerShield Field, FHe) 可作為修正流體運動的影響因素，改變層流與湍流的轉換過程，影響星際氣體流動、黑洞吸積盤等高能物理現象。
+        然而，該方程的解析解仍是一個未解難題，特別是在 **湍流 (Turbulence)** 的情況下，流體運動變得極其混亂且難以精確預測。
+        <br> **赫爾斯盾場 (HerShield Field, FHe)** 可能成為關鍵因素，提供對湍流與層流轉換過程的修正，並影響恆星風、星際氣體流動、黑洞吸積盤等高能天文現象。
     </p>
 </section>
 
 <section>
     <h2>📐 赫爾斯盾場影響 | HerShield Field Interaction</h2>
     <p>
-        赫盾場影響 Navier-Stokes 方程的方式可表示為：
+        赫盾場對 Navier-Stokes 方程的影響可以表示為：
     </p>
     <div class="math">
-        $$ \mathbf{f} = F_{He} = \nabla \times (B + E) - \frac{\partial E}{\partial t} $$
+        $$ f = F_{He} = \nabla \times (B + E) - \frac{\partial E}{\partial t} $$
     </div>
     <p>
-        在此公式中：
+        在這個公式中：
         <br> - **\( B \)**：赫盾場內部的磁場，影響帶電流體的運動模式。
         <br> - **\( E \)**：赫盾場內的電場，可改變流體的能量分佈。
         <br> - **\( \frac{\partial E}{\partial t} \)**：電場的時間變化項，影響等離子體的穩定性與擴散行為。
     </p>
     <p>
         **物理現象影響：**
-        <br> 1️⃣ **黑洞吸積盤**：赫盾場可修正黑洞吸積盤的氣體流動，使其更穩定或更混沌。
-        <br> 2️⃣ **星際介質運動**：赫盾場可能影響星際氣體雲，導致塵埃與氣體的聚合速度改變。
-        <br> 3️⃣ **太陽風與磁暴**：赫盾場可能對太陽風的流動產生修正，使其影響地球磁場的方式改變。
+        <br> 1️⃣ **黑洞吸積盤 (Black Hole Accretion Disk)**：赫盾場可修正黑洞吸積盤的氣體流動，使其更穩定或更混沌。
+        <br> 2️⃣ **星際介質運動 (Interstellar Medium Motion)**：赫盾場可能影響星際氣體雲，改變塵埃與氣體的聚合速度。
+        <br> 3️⃣ **太陽風與磁暴 (Solar Wind & Magnetic Storms)**：赫盾場可能對太陽風的流動產生修正，影響地球磁場的方式。
+    </p>
+</section>
+
+<section>
+    <h2>📊 數學推導與驗證 | Mathematical Derivation & Validation</h2>
+    <p>
+        **赫盾場修正 Navier-Stokes 方程的推導：**
+        <br> 假設赫盾場影響流體內部的壓力分佈，我們引入修正壓力：
+    </p>
+    <div class="math">
+        $$ p' = p + F_{He} \cdot \rho $$
+    </div>
+    <p>
+        修正後的 Navier-Stokes 方程變為：
+    </p>
+    <div class="math">
+        $$ \rho \left( \frac{\partial u}{\partial t} + u \cdot \nabla u \right) = -\nabla (p + F_{He} \cdot \rho) + \mu \nabla^2 u + f $$
+    </div>
+    <p>
+        **數值模擬與驗證：**
+        <br> - 透過 **黑洞吸積盤**、**星際介質流動** 的數據來驗證赫盾場的影響。
+        <br> - 比較 **有無赫盾場修正時的流體動力學行為**，觀察湍流與層流的轉換變化。
     </p>
 </section>
 
 <section>
     <h2>🧪 應用 | Applications</h2>
     <p>
-        赫爾斯盾場與 Navier-Stokes 方程的修正應用於：
+        **赫爾斯盾場與 Navier-Stokes 方程的修正應用：**
     </p>
     <p>
         **1️⃣ 恆星風與行星際介質 (Stellar Wind & Interstellar Medium)**
@@ -88,30 +110,10 @@
     </p>
 </section>
 
-<section>
-    <h2>📊 數學推導與驗證 | Mathematical Derivation & Validation</h2>
-    <p>
-        **赫盾場修正 Navier-Stokes 方程的推導：**
-        <br> - 假設赫盾場影響流體內部的壓力分佈，我們引入修正壓力：
-    </p>
-    <div class="math">
-        $$ p' = p + F_{He} \cdot \rho $$
-    </div>
-    <p>
-        修正後的 Navier-Stokes 方程變為：
-    </p>
-    <div class="math">
-        $$ \rho \left( \frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} \right) = - \nabla (p + F_{He} \cdot \rho) + \mu \nabla^2 \mathbf{u} + \mathbf{f} $$
-    </div>
-    <p>
-        **數值模擬與驗證：**
-        <br> 透過黑洞吸積盤、星際介質流動的數據對此方程進行驗證，觀察赫盾場的影響。
-    </p>
-</section>
-
 <footer class="contact">
     <p>創作者 | Author: Kru, Yupin Su.</p>
     <p>📧 Email: kruzi.eemc2@gmail.com | 🔗 <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
 </footer>
+
 </body>
 </html>
