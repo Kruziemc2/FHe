@@ -16,20 +16,6 @@
         h1, h2, h3 {
             color: #FFD700; /* 金黃色標題 */
         }
-        #equationDisplay {
-            margin: auto;
-            width: 100%;
-            text-align: center;
-        }
-        #equationDisplay img {
-            max-width: 1000px; /* 放大 2 倍 */
-            margin-top: 20px;
-            filter: invert(100%); /* 讓數學公式變成白色 */
-        }
-        #navigation, #equationList {
-            text-align: left;
-            padding-left: 20px;
-        }
         .container {
             display: flex;
             justify-content: space-between;
@@ -41,11 +27,6 @@
             text-align: left;
             padding: 10px;
         }
-        .answer-section {
-            width: 100%;
-            text-align: center;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
@@ -54,90 +35,38 @@
     <h1>赫爾斯盾場方程 | HerShield Equation</h1>
     <p>🚀 **核心方程**：</p>
     <div id="equationDisplay">
-        <img src="assets/FHe.svg" alt="HerShield Field Equation">
+        <a href="docs/FHe.html" target="_blank">📄 查看赫盾場核心方程</a>
     </div>
 </header>
-
-<section id="navigation">
-    <h2>🔍 導覽 | Navigation</h2>
-    <ul>
-        <li>📂 <a href="docs/data_dashboard.html">數據庫 | Data Database</a></li>
-        <li>🔬 <a href="docs/GR_Calculations.html">廣義相對論計算 | GR Calculations</a></li>
-        <li>🧬 <a href="docs/Quantum_Calculations.html">量子力學計算 | Quantum Calculations</a></li>
-        <li>🖊️ <a href="#">暗物質計算 | Dark Matter</a></li>
-        <li>🛡️ <a href="#">赫爾斯盾場 | HerShield Field</a></li>
-    </ul>
-</section>
 
 <section id="equationList">
     <h2>📜 人類待解的方程 | Unsolved Physics Equations</h2>
     <ul>
-        <li><a href="#" onclick="changeEquation('EField.svg', '質能方程')">質能方程 | Mass-Energy Equation</a></li>
-        <li><a href="#" onclick="changeEquation('Schrödinger_Equation.svg', '薛定諤方程')">薛定諤方程 | Schrödinger Equation</a></li>
-        <li><a href="#" onclick="changeEquation('Navier-Stokes.svg', 'Navier-Stokes 方程')">Navier-Stokes 方程</a></li>
-        <li><a href="#" onclick="changeEquation('TRSymmetry.svg', '量子引力方程')">量子引力方程 | Quantum Gravity Equation</a></li>
-        <li><a href="#" onclick="changeEquation('Dm motion.svg', '暗物質運動方程')">暗物質運動方程 | Dark Matter Motion Equation</a></li>
-        <li><a href="#" onclick="changeEquation('Schrödingertime.svg', '時間反演方程')">時間反演方程 | Time Reversal Equation</a></li>
+        <li><a href="docs/EField.html" target="_blank">📄 質能方程 | Mass-Energy Equation</a></li>
+        <li><a href="docs/Schrodinger_Equation.html" target="_blank">📄 薛定諤方程 | Schrödinger Equation</a></li>
+        <li><a href="docs/Navier-Stokes.html" target="_blank">📄 Navier-Stokes 方程</a></li>
+        <li><a href="docs/TRSymmetry.html" target="_blank">📄 量子引力方程 | Quantum Gravity Equation</a></li>
+        <li><a href="docs/Dm_motion.html" target="_blank">📄 暗物質運動方程 | Dark Matter Motion Equation</a></li>
+        <li><a href="docs/Schrodinger_time.html" target="_blank">📄 時間反演方程 | Time Reversal Equation</a></li>
     </ul>
 </section>
 
 <div class="container">
     <section class="math-section">
         <h2>📐 數學解析 | Mathematical Derivation</h2>
-        <p id="mathDerivation">請選擇一個待解方程 | Select an equation to solve</p>
-        <h3>符號解析 | Symbol Explanation</h3>
-        <p id="symbolExplanation">該方程所有符號的意義將顯示在這裡。</p>
-        <h3>應用範圍 | Application</h3>
-        <p id="applicationExplanation">該方程的應用場景將顯示在這裡。</p>
+        <p id="mathDerivation">請點選上方連結，在新視窗查看數學方程。</p>
     </section>
 
     <section class="explanation-section">
         <h2>📖 解析 | Explanation</h2>
-        <p id="equationExplanation">請選擇一個方程來查看解析</p>
-        <h3>解開什麼？ | What does this equation solve?</h3>
-        <p id="solutionExplanation">該方程解釋的物理問題。</p>
-        <h3>赫盾場的關聯 | HerShield Field Connection</h3>
-        <p id="HerShieldConnection">該方程與赫盾場的關聯。</p>
+        <p id="equationExplanation">該方程的解析和應用，請點擊連結後查看。</p>
     </section>
-</div>
-
-<div class="answer-section">
-    <h2>✅ 計算結果 | Answer</h2>
-    <p id="answerResult">計算完成後，答案會顯示在這裡。</p>
 </div>
 
 <footer>
     <p>© 2025 赫爾斯盾場研究 | HerShield Field Research</p>
     <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a> | 📧 Email: kruzi.eemc2@gmail.com
 </footer>
-
-<script>
-    function changeEquation(equationFile, equationName) {
-        document.getElementById("equationDisplay").innerHTML =
-            `<img src="assets/${equationFile}" alt="${equationName}">`;
-
-        document.getElementById("mathDerivation").innerHTML =
-            `目前顯示的是：${equationName} 的數學解析`;
-
-        document.getElementById("equationExplanation").innerHTML =
-            `${equationName} 是物理學中的核心方程，適用於 XXXX 研究。`;
-
-        document.getElementById("symbolExplanation").innerHTML =
-            `${equationName} 的所有變數代表的意義：...`;
-
-        document.getElementById("applicationExplanation").innerHTML =
-            `${equationName} 主要應用在 XXXX 領域，例如 XXXX`;
-
-        document.getElementById("solutionExplanation").innerHTML =
-            `該方程解釋了 XXXX 物理現象。`;
-
-        document.getElementById("HerShieldConnection").innerHTML =
-            `${equationName} 與赫盾場的關聯為 XXXX。`;
-
-        document.getElementById("answerResult").innerHTML =
-            `計算結果：XXX (數學計算模組將補充)`;
-    }
-</script>
 
 </body>
 </html>
