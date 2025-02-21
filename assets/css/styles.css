@@ -2,51 +2,17 @@ body {
     background-color: black;
     color: white;
     font-family: Arial, sans-serif;
-}
-
-.header {
-    padding: 10px;
-    background-color: #222;
-    text-align: left;
-}
-
-.home-link {
-    color: #ffcc00;
-    font-size: 20px;
-}
-
-.sidebar {
-    width: 200px;
-    position: fixed;
-    top: 60px;
-    left: 10px;
-}
-
-.content {
-    margin-left: 220px;
-    padding: 20px;
-}
-
-.equation-container {
     text-align: center;
 }
 
-.equation-img {
-    max-width: 60%;
-    height: auto;
+h1, h2, h3 {
+    color: yellow;
 }
 
-.equation-img-small {
-    max-width: 40%;
-    height: auto;
+a {
+    color: lightblue;
 }
 
-.unsolved-equations {
-    position: absolute;
-    top: 100px;
-    right: 20px;
-}
-
-.combined-equation {
-    text-align: center;
+img {
+    background: transparent;
 }
