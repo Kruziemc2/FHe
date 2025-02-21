@@ -10,7 +10,7 @@
     <style>
         body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
         h1, h2 { color: white; }
-        p { color: white; max-width: 800px; margin: 0 auto; text-align: justify; }
+        p { color: white; max-width: 900px; margin: 0 auto; text-align: justify; }
         .math { text-align: center; color: white; font-size: 1.3em; margin: 20px 0; }
         .contact { margin-top: 40px; }
         .contact a { color: #1e90ff; margin: 0 10px; text-decoration: none; }
@@ -23,7 +23,7 @@
 <header>
     <h1>薛定諤方程與赫爾斯盾場 | Schrödinger Equation & HerShield Field</h1>
     <nav class="nav">
-        <a href="/FHe//index.html">🏠 回首頁 | Home</a>
+        <a href="/index.html">🏠 回首頁 | Home</a>
         <a href="GR_Calculations.html">📜 廣義相對論計算 | General Relativity</a>
         <a href="Quantum_Calculations.html">⚛️ 量子力學計算 | Quantum Mechanics</a>
     </nav>
@@ -40,22 +40,46 @@
     <p>
         The Schrödinger equation describes the time evolution of quantum states, forming the foundation of quantum mechanics.
     </p>
+</section>
+
+<section>
+    <h2>📐 數學推導與證明 | Mathematical Derivation & Proof</h2>
     <p>
-        **現存未解問題 | Unresolved Questions:**
-        <br> 1️⃣ 量子態的塌縮過程是否具決定性？ (Is wavefunction collapse deterministic?)
-        <br> 2️⃣ 為何某些條件下，量子疊加態能持續更久？ (Why do some quantum superpositions last longer?)
-        <br> 3️⃣ 量子糾纏如何能超越局域性？ (How does quantum entanglement defy locality?)
+        讓我們從量子力學的基本假設出發，推導薛定諤方程：
     </p>
     <p>
-        **赫爾斯盾場 (HerShield Field, FHe) 的貢獻 | How HerShield Field Helps:**
-        <br> - 控制量子態塌縮，使其受調節 (Regulates wavefunction collapse)
-        <br> - 減少外部環境干擾，提高疊加態穩定性 (Enhances superposition stability)
-        <br> - 影響量子糾纏，優化量子通訊 (Refines quantum entanglement for communication)
+        1️⃣ **量子態演化假設**  
+        在量子力學中，量子態 \( \Psi \) 由哈密頓算符 \( \hat{H} \) 控制：
+    </p>
+    <div class="math">
+        $$ \hat{H} \Psi = E \Psi $$
+    </div>
+    <p>
+        2️⃣ **能量與動量關係式**  
+        在自由粒子的情況下，總能量 \( E \) 可寫為：
+    </p>
+    <div class="math">
+        $$ E = \frac{p^2}{2m} $$
+    </div>
+    <p>
+        根據量子力學的動量算符定義：
+    </p>
+    <div class="math">
+        $$ \hat{p} = -i \hbar \nabla $$
+    </div>
+    <p>
+        代入總能量方程，我們得到：
+    </p>
+    <div class="math">
+        $$ i\hbar \frac{\partial}{\partial t} \Psi = -\frac{\hbar^2}{2m} \nabla^2 \Psi + V\Psi $$
+    </div>
+    <p>
+        這就是**時間依賴薛定諤方程**。
     </p>
 </section>
 
 <section>
-    <h2>📐 赫爾斯盾場影響 | HerShield Field Interaction</h2>
+    <h2>⚡ 赫爾斯盾場影響 | HerShield Field Interaction</h2>
     <p>
         赫爾斯盾場影響薛定諤方程的方式可表示為：
     </p>
@@ -68,12 +92,6 @@
         <br> - **\( E \) 赫盾電場 (HerShield Electric Field):** 控制量子態 (Modulates quantum states)
         <br> - **\( \frac{\partial E}{\partial t} \) 場的時間變化 (Field Time Variation):** 改變量子系統的演化 (Alters quantum evolution)
     </p>
-    <p>
-        **具體影響 | Effects:**
-        <br> 1️⃣ **量子塌縮控制 | Collapse Regulation** - 赫盾場可讓量子疊加態更長時間存在 (FHe extends quantum superpositions)
-        <br> 2️⃣ **量子場修正 | Quantum Field Correction** - 影響哈密頓算符，使波函數穩定 (Stabilizes wavefunctions by modifying Hamiltonian)
-        <br> 3️⃣ **黑洞內部量子態 | Black Hole Quantum States** - 可能解釋黑洞內的量子態持久性 (Might explain quantum state stability inside black holes)
-    </p>
 </section>
 
 <section>
@@ -83,20 +101,19 @@
     </p>
     <p>
         **1️⃣ 量子計算 (Quantum Computing)**  
-        - 減少量子比特退相干效應 (Reduces decoherence in qubits)  
-        - 增強量子糾纏態穩定性 (Enhances entanglement stability)  
+        - 赫盾場降低量子比特的退相干效應，使計算更準確。  
     </p>
     <p>
         **2️⃣ 量子加密 (Quantum Cryptography)**  
-        - 赫盾場能提高量子密鑰分發 (QKD) 的安全性 (Strengthens QKD security)  
+        - 赫盾場可增強量子密鑰分發 (QKD) 的安全性。  
     </p>
     <p>
         **3️⃣ 量子傳輸 (Quantum Transport)**  
-        - 可能影響量子隧道效應，提高電子穿隧機率 (Modulates quantum tunneling for enhanced transport)  
+        - 赫盾場影響量子隧道效應，可能提升電子穿隧能力。  
     </p>
     <p>
         **4️⃣ 黑洞內部物理 (Black Hole Quantum States)**  
-        - 赫盾場可能解釋黑洞內部的量子態穩定性 (Might regulate quantum states inside black holes)  
+        - 赫盾場可能影響黑洞內部的量子態穩定性。  
     </p>
 </section>
 
