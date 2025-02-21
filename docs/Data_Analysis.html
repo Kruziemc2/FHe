@@ -1,4 +1,53 @@
 <!DOCTYPE html>
+<script>
+    const API_KEYS = {
+        NASA: "UlxbY1TIgdhFZkW4FgeIcrOa3Ttb4TVYU4W3nV3S", // 你的 NASA API KEY
+    };
+
+    async function fetchData() {
+        try {
+            // NOAA 太陽風數據
+            const solarWindResponse = await fetch("https://services.swpc.noaa.gov/json/ace-swepam.json");
+            const solarWindData = await solarWindResponse.json();
+            const latestSolarWind = solarWindData[solarWindData.length - 1]; // 取最新數據
+
+            document.getElementById('solar_wind_speed').innerText = latestSolarWind.speed + " km/s" || "N/A km/s";
+            document.getElementById('particle_density').innerText = latestSolarWind.density + " p/cm³" || "N/A p/cm³";
+
+            // NOAA 地磁場數據
+            const kpIndexResponse = await fetch("https://services.swpc.noaa.gov/json/planetary-k-index.json");
+            const kpIndexData = await kpIndexResponse.json();
+            document.getElementById('kp_index').innerText = kpIndexData.kp[0].value || "N/A";
+
+            // USGS 地震數據
+            const earthquakeResponse = await fetch("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson");
+            const earthquakeData = await earthquakeResponse.json();
+            const latestEarthquake = earthquakeData.features[0].properties;
+
+            document.getElementById('latest_earthquake_time').innerText = new Date(latestEarthquake.time).toLocaleString() || "N/A";
+            document.getElementById('earthquake_magnitude').innerText = latestEarthquake.mag || "N/A";
+
+            // 國際太空站 ISS 位置
+            const issResponse = await fetch("https://api.wheretheiss.at/v1/satellites/25544");
+            const issData = await issResponse.json();
+
+            document.getElementById('iss_location').innerText = `Lat: ${issData.latitude}, Lon: ${issData.longitude}`;
+
+            // NASA 太陽 & 月球數據
+            const moonResponse = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEYS.NASA}`);
+            const moonData = await moonResponse.json();
+            document.getElementById('lunar_phase').innerText = moonData.title || "N/A"; // 可能需要替換為月相 API
+            document.getElementById('lunar_gravity').innerText = "1.62 m/s²"; // 固定月球重力
+
+        } catch (error) {
+            console.error("數據載入錯誤", error);
+        }
+    }
+
+    // 每 15 秒自動更新數據
+    setInterval(fetchData, 15000);
+    fetchData();
+</script>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
