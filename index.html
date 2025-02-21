@@ -8,10 +8,10 @@
     <script src="assets/js/script.js" defer></script>
     <style>
         body {
-            color: white;  /* 文字變白 */
-            font-weight: bold; /* 字體加粗 */
-            text-align: center; /* 置中 */
-            background-color: black; /* 背景變黑 */
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            background-color: black;
         }
         h1, h2, h3 {
             color: #FFD700; /* 金黃色標題 */
@@ -32,6 +32,22 @@
         img {
             max-width: 300px;
             margin-top: 20px;
+            filter: invert(100%); /* 讓黑底上的數學圖片變白 */
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        .math-section {
+            width: 45%;
+            text-align: left;
+            padding: 10px;
+        }
+        .explanation-section {
+            width: 45%;
+            text-align: left;
+            padding: 10px;
         }
     </style>
 </head>
@@ -68,15 +84,25 @@
     </ul>
 </section>
 
-<section>
-    <h2>📐 數學解析 | Mathematical Derivation</h2>
-    <p id="mathDerivation">請選擇一個待解方程 | Select an equation to solve</p>
-</section>
+<div class="container">
+    <section class="math-section">
+        <h2>📐 數學解析 | Mathematical Derivation</h2>
+        <p id="mathDerivation">請選擇一個待解方程 | Select an equation to solve</p>
+        <h3>符號解析 | Symbol Explanation</h3>
+        <p id="symbolExplanation">這裡將顯示選定方程的每個符號代表什麼。</p>
+        <h3>應用範圍 | Application</h3>
+        <p id="applicationExplanation">這裡將顯示該方程的應用場景。</p>
+    </section>
 
-<section>
-    <h2>📖 解析 | Explanation</h2>
-    <p id="equationExplanation">請選擇一個方程來查看解析</p>
-</section>
+    <section class="explanation-section">
+        <h2>📖 解析 | Explanation</h2>
+        <p id="equationExplanation">請選擇一個方程來查看解析</p>
+        <h3>解開什麼？ | What does this equation solve?</h3>
+        <p id="solutionExplanation">這裡將顯示該方程可以解決的物理問題。</p>
+        <h3>赫盾場的關聯 | HerShield Field Connection</h3>
+        <p id="HerShieldConnection">這裡將解釋該方程如何與赫爾斯盾場相關。</p>
+    </section>
+</div>
 
 <footer>
     <p>© 2025 赫爾斯盾場研究 | HerShield Field Research</p>
@@ -93,6 +119,18 @@
 
         document.getElementById("equationExplanation").innerHTML =
             `${equationName} 是當前研究的關鍵物理方程，正在進行解析與驗證。`;
+
+        document.getElementById("symbolExplanation").innerHTML =
+            `這裡會列出 ${equationName} 的所有變數代表的意義`;
+
+        document.getElementById("applicationExplanation").innerHTML =
+            `${equationName} 主要應用在 XXX 領域，例如 XXXX`;
+
+        document.getElementById("solutionExplanation").innerHTML =
+            `這個方程解開了 XXXX 問題，並在 XXXX 領域有所應用。`;
+
+        document.getElementById("HerShieldConnection").innerHTML =
+            `${equationName} 可能與赫盾場的 XXXX 機制有關，透過 XXXX 影響 XXXX。`;
     }
 </script>
 
