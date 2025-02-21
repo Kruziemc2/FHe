@@ -29,6 +29,10 @@
             text-align: left;
             padding-left: 20px;
         }
+        img {
+            max-width: 300px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -37,16 +41,16 @@
     <h1>赫爾斯盾場方程 | HerShield Equation</h1>
     <p>🚀 核心方程：</p>
     <div id="equationDisplay">
-        <img src="assets/FHe.svg" alt="HerShield Field Equation" width="300px">
+        <img src="assets/FHe.svg" alt="HerShield Field Equation">
     </div>
 </header>
 
 <section id="navigation">
     <h2>🔍 導覽 | Navigation</h2>
     <ul>
-        <li>📂 <a href="#">數據庫 | Data Database</a></li>
-        <li>🔬 <a href="#">廣義相對論計算 | GR Calculations</a></li>
-        <li>🧬 <a href="#">量子力學計算 | Quantum Calculations</a></li>
+        <li>📂 <a href="docs/data_dashboard.html">數據庫 | Data Database</a></li>
+        <li>🔬 <a href="docs/GR_Calculations.html">廣義相對論計算 | GR Calculations</a></li>
+        <li>🧬 <a href="docs/Quantum_Calculations.html">量子力學計算 | Quantum Calculations</a></li>
         <li>🖊️ <a href="#">暗物質計算 | Dark Matter</a></li>
         <li>🛡️ <a href="#">赫爾斯盾場 | HerShield Field</a></li>
     </ul>
@@ -55,23 +59,23 @@
 <section id="equationList">
     <h2>📜 人類待解的方程 | Unsolved Physics Equations</h2>
     <ul>
-        <li><a href="#" onclick="changeEquation('E=mc2.svg')">質能方程 | Mass-Energy Equation</a></li>
-        <li><a href="#" onclick="changeEquation('Schrodinger.svg')">薛定諤方程 | Schrödinger Equation</a></li>
-        <li><a href="#" onclick="changeEquation('Navier-Stokes.svg')">Navier-Stokes 方程</a></li>
-        <li><a href="#" onclick="changeEquation('QuantumGravity.svg')">量子引力方程 | Quantum Gravity Equation</a></li>
-        <li><a href="#" onclick="changeEquation('DarkMatter.svg')">暗物質運動方程 | Dark Matter Motion Equation</a></li>
-        <li><a href="#" onclick="changeEquation('TimeReversal.svg')">時間反演方程 | Time Reversal Equation</a></li>
+        <li><a href="#" onclick="changeEquation('EField.svg', '質能方程')">質能方程 | Mass-Energy Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Schrödinger_Equation.svg', '薛定諤方程')">薛定諤方程 | Schrödinger Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Navier-Stokes.svg', 'Navier-Stokes 方程')">Navier-Stokes 方程</a></li>
+        <li><a href="#" onclick="changeEquation('TRSymmetry.svg', '量子引力方程')">量子引力方程 | Quantum Gravity Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Dm_motion.svg', '暗物質運動方程')">暗物質運動方程 | Dark Matter Motion Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Schrödingertime.svg', '時間反演方程')">時間反演方程 | Time Reversal Equation</a></li>
     </ul>
 </section>
 
 <section>
     <h2>📐 數學解析 | Mathematical Derivation</h2>
-    <p>請選擇一個待解方程 | Select an equation to solve</p>
+    <p id="mathDerivation">請選擇一個待解方程 | Select an equation to solve</p>
 </section>
 
 <section>
     <h2>📖 解析 | Explanation</h2>
-    <p>請選擇一個方程來查看解析</p>
+    <p id="equationExplanation">請選擇一個方程來查看解析</p>
 </section>
 
 <footer>
@@ -80,9 +84,15 @@
 </footer>
 
 <script>
-    function changeEquation(equationFile) {
+    function changeEquation(equationFile, equationName) {
         document.getElementById("equationDisplay").innerHTML =
-            `<img src="assets/${equationFile}" width="300px">`;
+            `<img src="assets/${equationFile}" alt="${equationName}">`;
+
+        document.getElementById("mathDerivation").innerHTML =
+            `現在顯示的是：${equationName} 的數學解析`;
+
+        document.getElementById("equationExplanation").innerHTML =
+            `${equationName} 是當前研究的關鍵物理方程，正在進行解析與驗證。`;
     }
 </script>
 
