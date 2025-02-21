@@ -5,69 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>赫爾斯盾場方程 | HerShield Equation</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- 回首頁 -->
-    <div class="header">
+
+    <header>
         <a href="index.html" class="home-link">🏠 回首頁 | Home</a>
-    </div>
+    </header>
 
-    <!-- 左側導覽 -->
-    <div class="sidebar">
-        <h2>🔍 <span class="highlight">導覽 | Navigation</span></h2>
-        <ul>
-            <li>📊 <a href="data.html">數據庫 | Data Database</a></li>
-            <li>🔵 <a href="gr.html">廣義相對論計算 | GR Calculations</a></li>
-            <li>⚛️ <a href="quantum.html">量子力學計算 | Quantum Calculations</a></li>
-            <li>🌀 <a href="dark_matter.html">暗物質計算 | Dark Matter</a></li>
-            <li>🛡️ <a href="hershield.html">赫爾斯盾場 | HerShield Field</a></li>
-        </ul>
-    </div>
-
-    <!-- 主要內容 -->
-    <div class="content">
-        <h1 class="title">赫爾斯盾場方程 | <span class="eng-title">HerShield Equation</span></h1>
-
-        <!-- 赫爾斯盾方程 -->
-        <div class="equation-container">
-            <img id="hershield-equation" src="images/fhe_equation.png" class="equation-img" alt="赫爾斯盾場方程">
+    <div class="container">
+        <!-- 赫盾方程顯示 -->
+        <div class="equation-section">
+            <h1>赫爾斯盾場方程 | HerShield Equation</h1>
+            <img src="png/hershield_equation.png" alt="HerShield Equation">
         </div>
 
-        <!-- 右側待解方程 -->
-        <div class="unsolved-equations">
-            <h2>人類待解的方程 | <span class="eng-title">Unsolved Physics Equations</span></h2>
+        <!-- 右側方程選擇 -->
+        <div class="equation-list">
+            <h2>📜 人類待解的方程 | Unsolved Physics Equations</h2>
             <ul>
-                <li><a href="#" class="eq-link" data-equation="mass_energy">$$ E = mc^2 $$ | 質能方程 | Mass-Energy Equation</a></li>
-                <li><a href="#" class="eq-link" data-equation="schrodinger">$$ \hat{H} \Psi = E \Psi $$ | 薛丁格方程 | Schrödinger Equation</a></li>
-                <li><a href="#" class="eq-link" data-equation="navier_stokes">Navier-Stokes 方程 | Navier-Stokes Equation</a></li>
-                <li><a href="#" class="eq-link" data-equation="quantum_gravity">量子引力方程 | Quantum Gravity Equation</a></li>
-                <li><a href="#" class="eq-link" data-equation="dark_matter_motion">暗物質運動方程 | Dark Matter Motion Equation</a></li>
-                <li><a href="#" class="eq-link" data-equation="time_reversal">時間反演方程 | Time Reversal Equation</a></li>
+                <li><a href="#" onclick="combineEquation('mass_energy')">$$E = mc^2$$ | 質能方程 | Mass-Energy Equation</a></li>
+                <li><a href="#" onclick="combineEquation('schrodinger')">$$\hat{H} \Psi = E \Psi$$ | 薛丁格方程 | Schrödinger Equation</a></li>
+                <li><a href="#" onclick="combineEquation('navier_stokes')">Navier-Stokes 方程 | Navier-Stokes Equation</a></li>
+                <li><a href="#" onclick="combineEquation('quantum_gravity')">量子引力方程 | Quantum Gravity Equation</a></li>
+                <li><a href="#" onclick="combineEquation('dark_matter')">暗物質運動方程 | Dark Matter Motion Equation</a></li>
+                <li><a href="#" onclick="combineEquation('time_reversal')">時間反演方程 | Time Reversal Equation</a></li>
             </ul>
         </div>
 
-        <!-- 數學解析區塊 -->
-        <h2>數學解析 | <span class="eng-title">Mathematical Derivation</span></h2>
-        <p>請選擇一個待解方程 | Select an equation to solve</p>
+        <!-- 組合計算區 -->
+        <div class="calculation-section">
+            <h2>📐 數學解析 | Mathematical Derivation</h2>
+            <div id="combined-equation">
+                <p>請選擇一個待解方程 | Select an equation to solve</p>
+            </div>
 
-        <div class="combined-equation">
-            <h3>組合方程 | <span class="eng-title">Combined Equation</span></h3>
-            <img id="combined-equation-img" src="images/default.png" class="equation-img-small" alt="組合方程">
+            <h2>📖 解析 | Explanation</h2>
+            <div id="equation-explanation">
+                <p>請選擇一個方程來查看解析</p>
+            </div>
         </div>
+    </div>
 
-        <!-- 解析區塊 -->
-        <h2>解析 | <span class="eng-title">Explanation</span></h2>
-        <p id="explanation-text">請選擇一個方程來查看解析</p>
-
-        <!-- 底部聯絡資訊 -->
-        <footer>
-            <p>&copy; 2025 赫爾斯盾場研究 | HerShield Field Research</p>
+    <!-- 底部聯絡資訊 -->
+    <footer>
+        <p>© 2025 赫爾斯盾場研究 | HerShield Field Research</p>
+        <p>
             <a href="https://www.linkedin.com/in/kru-su-64a681329/">LinkedIn</a> |
             <a href="https://www.facebook.com/su.kru.376/">Facebook</a> |
             <a href="https://www.instagram.com/krn2u/">Instagram</a> |
             📧 Email: kruzi.eemc2@gmail.com
-        </footer>
-    </div>
+        </p>
+    </footer>
+
 </body>
 </html>
