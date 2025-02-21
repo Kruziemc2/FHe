@@ -33,13 +33,13 @@
 <section>
     <h2>📌 摘要 | Abstract</h2>
     <p>
-        Navier-Stokes 方程是流體力學的基礎方程，描述流體的運動行為：
+        Navier-Stokes 方程是描述流體運動的基本方程，廣泛應用於空氣動力學、氣體動力學、等離子體物理等領域：
     </p>
     <div class="math">
         $$ \rho \left( \frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} \right) = - \nabla p + \mu \nabla^2 \mathbf{u} + \mathbf{f} $$
     </div>
     <p>
-        然而，該方程的完整解仍然是一個數學難題，尤其是湍流模型的描述仍未被完全解析。赫爾斯盾場 (HerShield Field, FHe) 提供了一種新的流體動力學修正方法，可影響流體的穩定性與動能傳遞。
+        然而，該方程的解析解仍然是一個數學難題，特別是在湍流 (Turbulence) 的情況下。赫爾斯盾場 (HerShield Field, FHe) 可作為修正流體運動的影響因素，改變層流與湍流的轉換過程，影響星際氣體流動、黑洞吸積盤等高能物理現象。
     </p>
 </section>
 
@@ -52,53 +52,60 @@
         $$ \mathbf{f} = F_{He} = \nabla \times (B + E) - \frac{\partial E}{\partial t} $$
     </div>
     <p>
-        這代表：
-        <br> - **赫盾場的磁場成分 \( B \)** 影響帶電粒子的流動方式。
-        <br> - **赫盾場的電場成分 \( E \)** 可調控等離子體流體的運動行為。
-        <br> - **時間變化項 \( \frac{\partial E}{\partial t} \)** 可能影響流體的穩定性和層流/湍流轉變。
+        在此公式中：
+        <br> - **\( B \)**：赫盾場內部的磁場，影響帶電流體的運動模式。
+        <br> - **\( E \)**：赫盾場內的電場，可改變流體的能量分佈。
+        <br> - **\( \frac{\partial E}{\partial t} \)**：電場的時間變化項，影響等離子體的穩定性與擴散行為。
+    </p>
+    <p>
+        **物理現象影響：**
+        <br> 1️⃣ **黑洞吸積盤**：赫盾場可修正黑洞吸積盤的氣體流動，使其更穩定或更混沌。
+        <br> 2️⃣ **星際介質運動**：赫盾場可能影響星際氣體雲，導致塵埃與氣體的聚合速度改變。
+        <br> 3️⃣ **太陽風與磁暴**：赫盾場可能對太陽風的流動產生修正，使其影響地球磁場的方式改變。
     </p>
 </section>
 
 <section>
     <h2>🧪 應用 | Applications</h2>
     <p>
-        赫爾斯盾場對 Navier-Stokes 方程的影響可能應用於：
+        赫爾斯盾場與 Navier-Stokes 方程的修正應用於：
     </p>
     <p>
-        **1️⃣ 星際氣體運動 (Interstellar Gas Motion)**
-        <br> - 赫盾場可影響恆星風、星際介質流動，改變天體形成機制。
+        **1️⃣ 恆星風與行星際介質 (Stellar Wind & Interstellar Medium)**
+        <br> - 研究赫盾場如何影響恆星風的密度變化，提高恆星風模型的準確性。
     </p>
     <p>
-        **2️⃣ 等離子體物理 (Plasma Physics)**
-        <br> - 赫盾場可能對太陽風、等離子體流動產生修正，使流體行為更可控。
+        **2️⃣ 等離子體動力學 (Plasma Dynamics)**
+        <br> - 赫盾場可能對太陽風、磁層等離子體流動產生修正，使流體行為更可控。
     </p>
     <p>
-        **3️⃣ 黑洞吸積盤動力學 (Black Hole Accretion Disk)**
-        <br> - 黑洞吸積盤內的流體運動可能受到赫盾場修正，使流體更穩定或更不穩定。
+        **3️⃣ 黑洞吸積盤建模 (Black Hole Accretion Disk Modeling)**
+        <br> - 黑洞吸積盤內的流體運動可能受到赫盾場影響，影響輻射輸出與物質落入黑洞的速率。
     </p>
     <p>
-        **4️⃣ 湍流建模 (Turbulence Modeling)**
-        <br> - 赫盾場可能提供新的湍流公式，減少湍流的不確定性，提高預測準確度。
+        **4️⃣ 湍流模擬與控制 (Turbulence Modeling & Control)**
+        <br> - 赫盾場可能提供新的湍流公式，提高湍流預測準確度，應用於航空工程與流體動力學。
     </p>
 </section>
 
 <section>
     <h2>📊 數學推導與驗證 | Mathematical Derivation & Validation</h2>
     <p>
-        **Navier-Stokes 方程的修正：**
-        <br> 假設赫盾場影響流體內部的壓力分佈，我們引入額外的修正壓力：
+        **赫盾場修正 Navier-Stokes 方程的推導：**
+        <br> - 假設赫盾場影響流體內部的壓力分佈，我們引入修正壓力：
     </p>
     <div class="math">
         $$ p' = p + F_{He} \cdot \rho $$
     </div>
     <p>
-        則修正後的 Navier-Stokes 方程為：
+        修正後的 Navier-Stokes 方程變為：
     </p>
     <div class="math">
         $$ \rho \left( \frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} \right) = - \nabla (p + F_{He} \cdot \rho) + \mu \nabla^2 \mathbf{u} + \mathbf{f} $$
     </div>
     <p>
-        這個新方程可能對**超流體、等離子體流動、黑洞吸積盤建模**產生影響。我們可以透過數值模擬來驗證赫盾場的影響，觀察流體的穩定性與層流/湍流轉變點。
+        **數值模擬與驗證：**
+        <br> 透過黑洞吸積盤、星際介質流動的數據對此方程進行驗證，觀察赫盾場的影響。
     </p>
 </section>
 
