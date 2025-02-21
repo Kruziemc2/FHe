@@ -1,16 +1,4 @@
 <!DOCTYPE html>
-<img src="assets/FHe.svg" alt="HerShield Field Equation" width="300px">
-<h2>數學解析 | Mathematical Derivation</h2>
-<div id="equationDisplay">
-    <img src="assets/FHe.svg" alt="HerShield Field Equation" width="300px">
-</div>
-
-<ul>
-    <li><a href="#" onclick="changeEquation('FHe.svg')">赫爾斯盾場方程</a></li>
-    <li><a href="#" onclick="changeEquation('Navier-Stokes.svg')">Navier-Stokes 方程</a></li>
-    <li><a href="#" onclick="changeEquation('Schrödinger Equation.svg')">薛丁格方程</a></li>
-</ul>
-
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
@@ -18,61 +6,85 @@
     <title>赫爾斯盾場方程 | HerShield Equation</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/script.js" defer></script>
+    <style>
+        body {
+            color: white;  /* 文字變白 */
+            font-weight: bold; /* 字體加粗 */
+            text-align: center; /* 置中 */
+            background-color: black; /* 背景變黑 */
+        }
+        h1, h2, h3 {
+            color: #FFD700; /* 金黃色標題 */
+        }
+        #equationDisplay {
+            margin: auto;
+            width: 100%;
+            text-align: center;
+        }
+        #navigation {
+            text-align: left;
+            padding-left: 20px;
+        }
+        #equationList {
+            text-align: left;
+            padding-left: 20px;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>赫爾斯盾場方程 | HerShield Equation</h1>
-        <p>📌 核心方程：</p>
-        <img src="assets/equations/equation_fixed_1.png" class="equation-img" alt="赫爾斯盾場方程">
-    </header>
+<header>
+    <h1>赫爾斯盾場方程 | HerShield Equation</h1>
+    <p>🚀 核心方程：</p>
+    <div id="equationDisplay">
+        <img src="assets/FHe.svg" alt="HerShield Field Equation" width="300px">
+    </div>
+</header>
 
-    <main>
-        <section id="navigation">
-            <h2>📖 導覽 | Navigation</h2>
-            <ul>
-                <li><a href="data_database.html">📊 數據庫 | Data Database</a></li>
-                <li><a href="gr_calculations.html">📚 廣義相對論計算 | GR Calculations</a></li>
-                <li><a href="quantum_calculations.html">🔬 量子力學計算 | Quantum Calculations</a></li>
-                <li><a href="dark_matter.html">🧪 暗物質計算 | Dark Matter</a></li>
-                <li><a href="hershield_field.html">🛡️ 赫爾斯盾場 | HerShield Field</a></li>
-            </ul>
-        </section>
+<section id="navigation">
+    <h2>🔍 導覽 | Navigation</h2>
+    <ul>
+        <li>📂 <a href="#">數據庫 | Data Database</a></li>
+        <li>🔬 <a href="#">廣義相對論計算 | GR Calculations</a></li>
+        <li>🧬 <a href="#">量子力學計算 | Quantum Calculations</a></li>
+        <li>🖊️ <a href="#">暗物質計算 | Dark Matter</a></li>
+        <li>🛡️ <a href="#">赫爾斯盾場 | HerShield Field</a></li>
+    </ul>
+</section>
 
-        <section id="unsolved-equations">
-            <h2>📌 人類待解的方程 | Unsolved Physics Equations</h2>
-            <ul>
-                <li><a href="#" onclick="updateEquation(1)">$$ E = mc^2 $$ | 質能方程 | Mass-Energy Equation</a></li>
-                <li><a href="#" onclick="updateEquation(2)">$$ \hat{H} \Psi = E \Psi $$ | 薛丁格方程 | Schrödinger Equation</a></li>
-                <li><a href="#" onclick="updateEquation(3)">Navier-Stokes 方程 | Navier-Stokes Equation</a></li>
-                <li><a href="#" onclick="updateEquation(4)">量子引力方程 | Quantum Gravity Equation</a></li>
-                <li><a href="#" onclick="updateEquation(5)">暗物質運動方程 | Dark Matter Motion Equation</a></li>
-                <li><a href="#" onclick="updateEquation(6)">時間反演方程 | Time Reversal Equation</a></li>
-            </ul>
-        </section>
+<section id="equationList">
+    <h2>📜 人類待解的方程 | Unsolved Physics Equations</h2>
+    <ul>
+        <li><a href="#" onclick="changeEquation('E=mc2.svg')">質能方程 | Mass-Energy Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Schrodinger.svg')">薛定諤方程 | Schrödinger Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Navier-Stokes.svg')">Navier-Stokes 方程</a></li>
+        <li><a href="#" onclick="changeEquation('QuantumGravity.svg')">量子引力方程 | Quantum Gravity Equation</a></li>
+        <li><a href="#" onclick="changeEquation('DarkMatter.svg')">暗物質運動方程 | Dark Matter Motion Equation</a></li>
+        <li><a href="#" onclick="changeEquation('TimeReversal.svg')">時間反演方程 | Time Reversal Equation</a></li>
+    </ul>
+</section>
 
-        <section id="math-derivation">
-            <h2>📐 數學解析 | Mathematical Derivation</h2>
-            <p>請選擇一個待解方程 | Select an equation to solve</p>
-            <img id="math-equation-img" src="" class="equation-img" alt="組合方程">
-        </section>
+<section>
+    <h2>📐 數學解析 | Mathematical Derivation</h2>
+    <p>請選擇一個待解方程 | Select an equation to solve</p>
+</section>
 
-        <section id="explanation">
-            <h2>📖 解析 | Explanation</h2>
-            <p id="equation-explanation">請選擇一個方程來查看解析</p>
-        </section>
+<section>
+    <h2>📖 解析 | Explanation</h2>
+    <p>請選擇一個方程來查看解析</p>
+</section>
 
-    </main>
+<footer>
+    <p>© 2025 赫爾斯盾場研究 | HerShield Field Research</p>
+    <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a> | 📧 Email: kruzi.eemc2@gmail.com
+</footer>
 
-    <footer>
-        <p>© 2025 赫爾斯盾場研究 | HerShield Field Research</p>
-        <p>
-            <a href="https://www.linkedin.com/in/kru-su-64a681329/">LinkedIn</a> |
-            <a href="https://www.facebook.com/su.kru.376/">Facebook</a> |
-            <a href="https://www.instagram.com/krn2u/">Instagram</a> |
-            📧 Email: kruzi.eemc2@gmail.com
-        </p>
-    </footer>
+<script>
+    function changeEquation(equationFile) {
+        document.getElementById("equationDisplay").innerHTML =
+            `<img src="assets/${equationFile}" width="300px">`;
+    }
+</script>
 
 </body>
 </html>
