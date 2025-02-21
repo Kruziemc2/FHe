@@ -9,7 +9,12 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.18/contrib/auto-render.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            renderMathInElement(document.body);
+            renderMathInElement(document.body, {
+                throwOnError: false,
+                macros: {
+                    "\\colorwhite": "\\textcolor{white}"
+                }
+            });
         });
     </script>
 </head>
@@ -27,30 +32,69 @@
 
 <section>
     <h2>📌 核心理論 | Core Theory</h2>
-    <p>質能方程描述了質量與能量的等價性，<strong>E=mc²</strong> 是愛因斯坦相對論的重要基礎。</p>
+    <p>
+        質能方程（E=mc²）描述了質量與能量的等價性，這是愛因斯坦在 1905 年相對論中提出的核心概念。
+        它表明任何靜止質量 \( m \) 都包含對應的能量 \( E \)，其中 \( c \) 是光速。<br>
+        The mass-energy equation (E=mc²) describes the equivalence of mass and energy, a fundamental concept introduced 
+        by Einstein in 1905 in the theory of relativity. It states that any rest mass \( m \) contains corresponding energy \( E \), 
+        where \( c \) is the speed of light.
+    </p>
+</section>
 
+<section>
     <h2>📜 數學推導 | Mathematical Derivation</h2>
-    <p>質能方程的推導過程如下：</p>
+    <p>
+        愛因斯坦的質能等價公式可由洛倫茲變換和能量動量關係推導如下：
+        The mass-energy equivalence equation can be derived using Lorentz transformations and the energy-momentum relation:
+    </p>
+    <div class="equation">
+        $$E^2 = p^2c^2 + m^2c^4$$
+    </div>
+    <p>
+        當物體處於靜止狀態，即 \( p = 0 \) 時，我們得到：
+        When the object is at rest (\( p = 0 \)), we get:
+    </p>
     <div class="equation">
         $$E = mc^2$$
     </div>
-    <p>這個公式表示：當一個物體的質量為 \( m \)，則其內含能量為 \( E \)，其中 \( c \) 是光速。</p>
+    <p>
+        這意味著即使物體不運動，它仍然擁有內在的能量。
+        This means that even if an object is not moving, it still possesses intrinsic energy.
+    </p>
+</section>
 
-    <h2>🔬 應用與驗證 | Applications & Experiment</h2>
-    <p>質能方程廣泛應用於核能、粒子物理與宇宙學，包括：</p>
+<section>
+    <h2>🌌 物理意義 | Physical Significance</h2>
+    <p>
+        質能方程解釋了質量可以轉換為能量，這在核裂變和核聚變中尤為重要。
+        The mass-energy equation explains that mass can be converted into energy, which is crucial in nuclear fission and fusion.
+    </p>
     <ul>
-        <li>🔬 **粒子加速器 (Particle Accelerators)** - 高能碰撞驗證質能轉換</li>
-        <li>☢ **核裂變與核聚變 (Nuclear Fission & Fusion)** - 研究核能反應的能量轉換</li>
-        <li>🌌 **宇宙射線 (Cosmic Rays)** - 高能物理學中的能量測量</li>
+        <li>☢ **核裂變 (Nuclear Fission)** - 核反應釋放巨大能量，例如原子彈與核電廠。</li>
+        <li>🌞 **核聚變 (Nuclear Fusion)** - 太陽和恆星內部的能量來源。</li>
+        <li>🔬 **高能物理 (High-Energy Physics)** - 例如粒子對撞機將質量轉化為能量。</li>
+    </ul>
+</section>
+
+<section>
+    <h2>🔬 應用與驗證 | Applications & Experiment</h2>
+    <p>
+        我們可以通過實驗來驗證這一理論：
+        The theory can be verified through experiments:
+    </p>
+    <ul>
+        <li>🔬 **LHC 大型強子對撞機 (Large Hadron Collider)** - 高能粒子對撞測試質能轉換。</li>
+        <li>☢ **核試驗 (Nuclear Tests)** - 早期核試驗驗證了 E=mc² 的準確性。</li>
+        <li>🌌 **宇宙射線觀測 (Cosmic Rays Observations)** - 高能物理學研究質能轉換現象。</li>
     </ul>
 </section>
 
 <section>
     <h2>📊 觀測數據比對 | Observational Data Comparison</h2>
-    <p>質能方程的實驗結果與觀測數據比對：</p>
+    <p>質能方程的驗證來自不同實驗：</p>
     <ul>
-        <li>🌍 **原子彈試驗 (Nuclear Tests)** - E=mc² 計算核爆釋放的能量</li>
-        <li>🚀 **LHC (大型強子對撞機)** - 高能粒子碰撞的能量轉換驗證</li>
+        <li>🌍 **原子彈試驗 (Nuclear Tests)** - 核爆釋放的能量與 E=mc² 預測相符。</li>
+        <li>🚀 **LHC (大型強子對撞機)** - 質量轉換為能量的高能粒子物理實驗。</li>
     </ul>
 </section>
 
