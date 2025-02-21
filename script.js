@@ -1,25 +1,26 @@
-// 公式對應圖片
-const equationImages = {
-    "mass_energy": "png/mass_energy.png",
-    "schrodinger": "png/schrodinger.png",
-    "navier_stokes": "png/navier_stokes.png",
-    "quantum_gravity": "png/quantum_gravity.png",
-    "dark_matter": "png/dark_matter.png",
-    "time_reversal": "png/time_reversal.png"
-};
+document.addEventListener("DOMContentLoaded", function () {
+    function updateEquation(equationId) {
+        const equationImages = [
+            "assets/equations/equation_fixed_1.png",
+            "assets/equations/equation_fixed_2.png",
+            "assets/equations/equation_fixed_3.png",
+            "assets/equations/equation_fixed_4.png",
+            "assets/equations/equation_fixed_5.png",
+            "assets/equations/equation_fixed_6.png"
+        ];
 
-// 公式對應解析內容
-const equationExplanations = {
-    "mass_energy": "質能方程描述了質量與能量的等價性...",
-    "schrodinger": "薛丁格方程描述了量子粒子的波動性...",
-    "navier_stokes": "Navier-Stokes 方程描述了流體力學中的運動...",
-    "quantum_gravity": "量子引力方程試圖統一量子力學與廣義相對論...",
-    "dark_matter": "暗物質運動方程嘗試解釋暗物質的行為...",
-    "time_reversal": "時間反演方程探討時間對稱性..."
-};
+        const equationDescriptions = [
+            "赫盾場與質能方程的組合解釋...",
+            "赫盾場與薛丁格方程的組合解釋...",
+            "赫盾場與Navier-Stokes方程的組合解釋...",
+            "赫盾場與量子引力方程的組合解釋...",
+            "赫盾場與暗物質運動方程的組合解釋...",
+            "赫盾場與時間反演方程的組合解釋..."
+        ];
 
-// 觸發組合方程顯示
-function combineEquation(eqKey) {
-    document.getElementById("combined-equation").innerHTML = `<img src="${equationImages[eqKey]}" alt="Equation">`;
-    document.getElementById("equation-explanation").innerHTML = `<p>${equationExplanations[eqKey]}</p>`;
-}
+        document.getElementById("math-equation-img").src = equationImages[equationId - 1];
+        document.getElementById("equation-explanation").innerText = equationDescriptions[equationId - 1];
+    }
+
+    window.updateEquation = updateEquation;
+});
