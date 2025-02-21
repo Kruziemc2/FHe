@@ -20,22 +20,24 @@
             margin: auto;
             width: 100%;
             text-align: center;
-            font-size: 1.5em; /* 放大方程 */
         }
-        #navigation, #equationList {
+        #navigation {
+            text-align: left;
+            padding-left: 20px;
+        }
+        #equationList {
             text-align: left;
             padding-left: 20px;
         }
         img {
-            max-width: 400px;
+            max-width: 300px;
             margin-top: 20px;
-            filter: invert(100%);
+            filter: invert(100%); /* 讓黑底上的數學圖片變白 */
         }
         .container {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: flex-start;
-            padding: 20px;
         }
         .math-section {
             width: 45%;
@@ -47,18 +49,13 @@
             text-align: left;
             padding: 10px;
         }
-        .answer-section {
-            width: 100%;
-            text-align: center;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>赫爾斯盾場方程 | HerShield Equation</h1>
-    <p>🚀 **核心方程**：</p>
+    <p>🚀 核心方程：</p>
     <div id="equationDisplay">
         <img src="assets/FHe.svg" alt="HerShield Field Equation">
     </div>
@@ -89,7 +86,7 @@
 
 <div class="container">
     <section class="math-section">
-        <h2>📐 核心方程 ➜ 帶入組合 ➜ 計算演算 ➜ 右側答案</h2>
+        <h2>📐 數學解析 | Mathematical Derivation</h2>
         <p id="mathDerivation">請選擇一個待解方程 | Select an equation to solve</p>
         <h3>符號解析 | Symbol Explanation</h3>
         <p id="symbolExplanation">這裡將顯示選定方程的每個符號代表什麼。</p>
@@ -105,11 +102,6 @@
         <h3>赫盾場的關聯 | HerShield Field Connection</h3>
         <p id="HerShieldConnection">這裡將解釋該方程如何與赫爾斯盾場相關。</p>
     </section>
-</div>
-
-<div class="answer-section">
-    <h2>✅ 計算結果 | Answer</h2>
-    <p id="answerResult">計算完成後，答案會顯示在這裡。</p>
 </div>
 
 <footer>
@@ -132,16 +124,13 @@
             `這裡會列出 ${equationName} 的所有變數代表的意義`;
 
         document.getElementById("applicationExplanation").innerHTML =
-            `${equationName} 主要應用在 XXXX 領域，例如 XXXX`;
+            `${equationName} 主要應用在 XXX 領域，例如 XXXX`;
 
         document.getElementById("solutionExplanation").innerHTML =
             `這個方程解開了 XXXX 問題，並在 XXXX 領域有所應用。`;
 
         document.getElementById("HerShieldConnection").innerHTML =
             `${equationName} 可能與赫盾場的 XXXX 機制有關，透過 XXXX 影響 XXXX。`;
-
-        document.getElementById("answerResult").innerHTML =
-            `計算結果：XXX (後續將由數學計算模組補充)`;
     }
 </script>
 
