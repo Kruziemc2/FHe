@@ -3,125 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>實時觀測數據 | Real-Time Space Data</title>
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>實時數據分析 | Real-Time Data Analysis</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
     <style>
         body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
         h1, h2 { color: white; }
-        p { color: white; max-width: 900px; margin: 0 auto; text-align: justify; }
-        .container { display: flex; flex-wrap: wrap; justify-content: center; }
-        .box { width: 45%; margin: 10px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
-        canvas { max-width: 100%; background: white; border-radius: 5px; }
+        p { max-width: 800px; margin: 0 auto; text-align: justify; }
+        .data-container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .data-box { width: 45%; margin: 10px; padding: 15px; border: 1px solid white; text-align: left; }
+        iframe { width: 100%; height: 300px; border: none; }
         .contact { margin-top: 40px; }
         .contact a { color: #1e90ff; margin: 0 10px; text-decoration: none; }
-        .nav { text-align: center; margin-bottom: 20px; }
-        .nav a { color: #00bfff; margin: 0 15px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>🌌 實時觀測數據 | Real-Time Space Data</h1>
-    <div class="nav">
-        🔙 <a href="../index.html">首頁 | Home</a> |
-        ☀️ <a href="Solar_Data.html">太陽數據 | Solar Data</a> |
-        🌍 <a href="Earth_Data.html">地球數據 | Earth Data</a> |
-        🌑 <a href="Moon_Data.html">月球數據 | Moon Data</a>
-    </div>
+    <h1>📊 實時數據分析 | Real-Time Data Analysis</h1>
+    <p>此頁面提供來自官方機構的即時數據，包括 **NASA, NOAA, ESA, USGS**，並自動每 15 秒更新一次。</p>
 </header>
 
 <section>
-    <h2>📌 主要觀測數據 | Key Observational Data</h2>
-    <p>
-        此頁面提供來自官方機構的即時數據，包括 **NASA、NOAA、ESA、USGS**，數據來自各種監測衛星與探測器，並會 **每 15 秒自動更新**。
-    </p>
+    <h2>☀️ 太陽風數據 | Solar Wind Data</h2>
+    <div class="data-container">
+        <div class="data-box">
+            <h3>🚀 太陽風速度 | Solar Wind Speed</h3>
+            <p id="solar_wind_speed">載入中...</p>
+        </div>
+        <div class="data-box">
+            <h3>⚡ 粒子密度 | Particle Density</h3>
+            <p id="particle_density">載入中...</p>
+        </div>
+    </div>
+    <iframe src="https://services.swpc.noaa.gov/images/ace-swepam-24h.gif"></iframe>
+    <p><a href="https://www.swpc.noaa.gov/products/ace-real-time-solar-wind">🔗 NOAA 太陽風數據</a></p>
 </section>
 
-<div class="container">
-    <div class="box">
-        <h2>🌞 太陽風數據 | Solar Wind Data</h2>
-        <iframe src="https://services.swpc.noaa.gov/images/ace-swepam-density.gif" width="100%" height="300px"></iframe>
-        <p>☀️ <b>太陽風速度 | Solar Wind Speed:</b> <span id="solar_wind_speed">Loading...</span> km/s</p>
-        <p>⚡ <b>電漿密度 | Plasma Density:</b> <span id="solar_wind_density">Loading...</span> p/cm³</p>
+<section>
+    <h2>🌍 地球磁場變化 | Earth's Magnetic Field</h2>
+    <div class="data-container">
+        <div class="data-box">
+            <h3>🧲 地磁強度 | Magnetic Field Strength</h3>
+            <p id="magnetic_field">載入中...</p>
+        </div>
+        <div class="data-box">
+            <h3>🌐 K 指數 | Kp Index</h3>
+            <p id="kp_index">載入中...</p>
+        </div>
     </div>
+    <iframe src="https://services.swpc.noaa.gov/images/planetary-k-index.gif"></iframe>
+    <p><a href="https://www.swpc.noaa.gov/products/planetary-k-index">🔗 NOAA 地磁場指數</a></p>
+</section>
 
-    <div class="box">
-        <h2>🌍 地球磁場變化 | Earth's Magnetic Field</h2>
-        <iframe src="https://services.swpc.noaa.gov/images/planetary-k-index.gif" width="100%" height="300px"></iframe>
-        <p>🌎 <b>K 指數 | Kp Index:</b> <span id="k_index">Loading...</span></p>
+<section>
+    <h2>🌑 月球數據 | Moon Data</h2>
+    <div class="data-container">
+        <div class="data-box">
+            <h3>🌙 月相 | Lunar Phase</h3>
+            <p id="lunar_phase">載入中...</p>
+        </div>
+        <div class="data-box">
+            <h3>📡 月球重力 | Lunar Gravity</h3>
+            <p id="lunar_gravity">載入中...</p>
+        </div>
     </div>
-</div>
+    <iframe src="https://moon.nasa.gov/system/news_items/main_images/899_Moon_Phases_November_2023.jpg"></iframe>
+    <p><a href="https://moon.nasa.gov/">🔗 NASA 月球數據</a></p>
+</section>
 
-<div class="container">
-    <div class="box">
-        <h2>📈 太陽黑子數量 | Sunspot Activity</h2>
-        <canvas id="sunspot_chart"></canvas>
-    </div>
+<section>
+    <h2>🚀 國際太空站位置 | ISS Live Location</h2>
+    <iframe src="https://www.n2yo.com/iframe/?s=25544"></iframe>
+    <p><a href="https://www.n2yo.com/satellite/?s=25544">🔗 ISS 位置數據</a></p>
+</section>
 
-    <div class="box">
-        <h2>🚀 國際太空站位置 | ISS Live Location</h2>
-        <iframe src="https://www.heavens-above.com/orbitdisplay.aspx?satid=25544&width=600&height=600" width="100%" height="300px"></iframe>
+<section>
+    <h2>🌍 地震數據 | Earthquake Data</h2>
+    <div class="data-container">
+        <div class="data-box">
+            <h3>⚠️ 最新地震時間 | Latest Earthquake Time</h3>
+            <p id="latest_earthquake_time">載入中...</p>
+        </div>
+        <div class="data-box">
+            <h3>📊 地震規模 | Earthquake Magnitude</h3>
+            <p id="earthquake_magnitude">載入中...</p>
+        </div>
     </div>
-</div>
+    <iframe src="https://earthquake.usgs.gov/earthquakes/map/"></iframe>
+    <p><a href="https://earthquake.usgs.gov/">🔗 USGS 地震數據</a></p>
+</section>
+
+<footer class="contact">
+    <p>創作者 | Author: Kru, Yupin Su.</p>
+    <p>📧 Email: kruzi.eemc2@gmail.com | 🔗 <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+</footer>
 
 <script>
-    let sunspotChart;
-
     async function fetchData() {
         try {
-            const apiKey = "YOUR_API_KEY";  // 替換為你的 API Key
+            const response = await fetch('https://api.nasa.gov/DONOTEXIST'); // 這裡應該替換為你的 API
+            const data = await response.json();
 
-            // 1. 獲取太陽風數據
-            const solarWindUrl = `https://api.nasa.gov/DONKI/FLR?api_key=${apiKey}`;
-            let solarWindResponse = await fetch(solarWindUrl);
-            let solarWindData = await solarWindResponse.json();
-            document.getElementById("solar_wind_speed").innerText = solarWindData[0]?.speed || "N/A";
-            document.getElementById("solar_wind_density").innerText = solarWindData[0]?.density || "N/A";
+            document.getElementById('solar_wind_speed').innerText = data.solar_wind_speed || "N/A km/s";
+            document.getElementById('particle_density').innerText = data.particle_density || "N/A p/cm³";
+            document.getElementById('magnetic_field').innerText = data.magnetic_field || "N/A µT";
+            document.getElementById('kp_index').innerText = data.kp_index || "N/A";
+            document.getElementById('lunar_phase').innerText = data.lunar_phase || "N/A";
+            document.getElementById('lunar_gravity').innerText = data.lunar_gravity || "N/A m/s²";
+            document.getElementById('latest_earthquake_time').innerText = data.latest_earthquake_time || "N/A";
+            document.getElementById('earthquake_magnitude').innerText = data.earthquake_magnitude || "N/A";
 
-            // 2. 獲取地磁場 K 指數
-            const geomagneticUrl = `https://api.nasa.gov/DONKI/GST?api_key=${apiKey}`;
-            let geoResponse = await fetch(geomagneticUrl);
-            let geoData = await geoResponse.json();
-            document.getElementById("k_index").innerText = geoData[0]?.kp_index || "N/A";
-
-            // 3. 更新太陽黑子數據
-            updateSunspotChart();
         } catch (error) {
-            console.error("數據獲取錯誤:", error);
-        }
-    }
-
-    function updateSunspotChart() {
-        if (!sunspotChart) {
-            let ctx = document.getElementById('sunspot_chart').getContext('2d');
-            sunspotChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-                    datasets: [{
-                        label: 'Sunspot Number',
-                        data: [45, 30, 60, 80, 75, 50], // 這些數據應該來自 API
-                        borderColor: 'yellow',
-                        borderWidth: 2
-                    }]
-                },
-                options: { responsive: true }
-            });
-        } else {
-            sunspotChart.data.datasets[0].data = [50, 40, 65, 85, 80, 55]; // 更新數據
-            sunspotChart.update();
+            console.error("數據載入錯誤", error);
         }
     }
 
     setInterval(fetchData, 15000);
     fetchData();
 </script>
-<footer class="contact">
-    <p>創作者 | Author: Kru, Yupin Su.</p>
-        <p>📧 Email: kruzi.eemc2@gmail.com</p>
-        <p>🔗 <a href="https://www.linkedin.com/in/kru-su-64a681329/">LinkedIn</a> | <a href="https://www.facebook.com/su.kru.376/">Facebook</a> | <a href="https://www.instagram.com/krn2u/">Instagram</a></p>
-        <p>© 2025 赫盾場研究 | HerShield Field Research</p>
-</footer>
+
 </body>
 </html>
