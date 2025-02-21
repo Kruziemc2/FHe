@@ -5,114 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>質能方程 | Mass-Energy Equation</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.18/katex.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.18/contrib/auto-render.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            renderMathInElement(document.body, {
-                throwOnError: false,
-                macros: {
-                    "\\colorwhite": "\\textcolor{white}"
-                }
-            });
-        });
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
+    <style>
+        body { background-color: black; color: white; font-family: Arial, sans-serif; }
+        h1, h2 { color: white; }
+        p { color: white; text-align: left; }
+        .math { text-align: center; color: white; }
+        .image-container { text-align: center; margin: 20px 0; }
+        .contact { text-align: center; margin-top: 40px; }
+        .contact a { color: #1e90ff; margin: 0 10px; text-decoration: none; }
+    </style>
 </head>
 <body>
 
 <header>
     <h1>質能方程 | Mass-Energy Equation</h1>
-    <nav>
-        <a href="../index.html">🏠 回首頁 | Home</a> |
-        <a href="Quantum_Calculations.html">🔬 量子力學計算 | Quantum Mechanics Calculations</a> |
-        <a href="GR_Calculations.html">🌌 廣義相對論計算 | General Relativity Calculations</a> |
-        <a href="../data_dashboard.html">📊 數據分析 | Data Analysis</a>
-    </nav>
 </header>
 
 <section>
-    <h2>📌 核心理論 | Core Theory</h2>
+    <h2>📌 摘要 | Abstract</h2>
     <p>
-        質能方程（E=mc²）描述了質量與能量的等價性，這是愛因斯坦在 1905 年相對論中提出的核心概念。
-        它表明任何靜止質量 \( m \) 都包含對應的能量 \( E \)，其中 \( c \) 是光速。<br>
-        The mass-energy equation (E=mc²) describes the equivalence of mass and energy, a fundamental concept introduced 
-        by Einstein in 1905 in the theory of relativity. It states that any rest mass \( m \) contains corresponding energy \( E \), 
-        where \( c \) is the speed of light.
+        質能等價方程揭示了能量與質量之間的關係，並成為現代物理學的基石。
+        此理論由愛因斯坦於 1905 年提出，並應用於核能、粒子物理與宇宙學等領域。
+    </p>
+    <p>
+        The mass-energy equivalence equation reveals the fundamental relationship between energy and mass.
+        Proposed by Einstein in 1905, this theory has become a cornerstone of modern physics,
+        influencing nuclear energy, particle physics, and cosmology.
+    </p>
+</section>
+
+<section class="math">
+    <h2>📐 公式 | Equation</h2>
+    <p>質能等價公式：</p>
+    <p>$$ E = mc^2 $$</p>
+    <p>The mass-energy equivalence equation:</p>
+    <p>$$ E = mc^2 $$</p>
+</section>
+
+<section>
+    <h2>🔬 物理現象與應用 | Physical Phenomena & Applications</h2>
+    <p>
+        這一方程在核裂變與核融合中極為重要，例如原子彈和氫彈的能量釋放機制。
+        在宇宙學中，它解釋了如何將質量轉換為輻射與能量，並影響宇宙膨脹。
+    </p>
+    <p>
+        This equation is crucial in nuclear fission and fusion, such as the energy release mechanism in atomic bombs and hydrogen bombs.
+        In cosmology, it explains how mass converts into radiation and energy, influencing cosmic expansion.
+    </p>
+</section>
+
+<div class="image-container">
+    <img src="../assets/images/mass_energy.png" alt="Mass-Energy Conversion" width="600">
+</div>
+
+<section>
+    <h2>📐 推導過程 | Derivation Process</h2>
+    <p>透過相對論動力學，我們可從四維動量導出該公式：</p>
+    <p>By relativistic mechanics, we derive this equation from four-momentum:</p>
+    <p class="math">
+        $$ E^2 - (pc)^2 = (mc^2)^2 $$
     </p>
 </section>
 
 <section>
-    <h2>📜 數學推導 | Mathematical Derivation</h2>
+    <h2>🧪 數據與模擬 | Data & Simulations</h2>
     <p>
-        愛因斯坦的質能等價公式可由洛倫茲變換和能量動量關係推導如下：
-        The mass-energy equivalence equation can be derived using Lorentz transformations and the energy-momentum relation:
+        在粒子加速器實驗中，科學家透過高能碰撞測試質能等價，驗證了高能質子與電子的質量變化與能量釋放。
     </p>
-    <div class="equation">
-        $$E^2 = p^2c^2 + m^2c^4$$
-    </div>
     <p>
-        當物體處於靜止狀態，即 \( p = 0 \) 時，我們得到：
-        When the object is at rest (\( p = 0 \)), we get:
-    </p>
-    <div class="equation">
-        $$E = mc^2$$
-    </div>
-    <p>
-        這意味著即使物體不運動，它仍然擁有內在的能量。
-        This means that even if an object is not moving, it still possesses intrinsic energy.
+        In particle accelerator experiments, scientists test mass-energy equivalence through high-energy collisions,
+        confirming mass variations and energy release in high-energy protons and electrons.
     </p>
 </section>
 
 <section>
-    <h2>🌌 物理意義 | Physical Significance</h2>
+    <h2>📜 結論 | Conclusion</h2>
     <p>
-        質能方程解釋了質量可以轉換為能量，這在核裂變和核聚變中尤為重要。
-        The mass-energy equation explains that mass can be converted into energy, which is crucial in nuclear fission and fusion.
+        質能等價為現代物理奠定基礎，影響粒子物理、核能技術與宇宙學等領域。
+        進一步研究可探索量子引力如何影響這一公式的適用性。
     </p>
-    <ul>
-        <li>☢ **核裂變 (Nuclear Fission)** - 核反應釋放巨大能量，例如原子彈與核電廠。</li>
-        <li>🌞 **核聚變 (Nuclear Fusion)** - 太陽和恆星內部的能量來源。</li>
-        <li>🔬 **高能物理 (High-Energy Physics)** - 例如粒子對撞機將質量轉化為能量。</li>
-    </ul>
-</section>
-
-<section>
-    <h2>🔬 應用與驗證 | Applications & Experiment</h2>
     <p>
-        我們可以通過實驗來驗證這一理論：
-        The theory can be verified through experiments:
+        Mass-energy equivalence is a cornerstone of modern physics, impacting particle physics, nuclear energy, and cosmology.
+        Further research may explore how quantum gravity influences this equation's applicability.
     </p>
-    <ul>
-        <li>🔬 **LHC 大型強子對撞機 (Large Hadron Collider)** - 高能粒子對撞測試質能轉換。</li>
-        <li>☢ **核試驗 (Nuclear Tests)** - 早期核試驗驗證了 E=mc² 的準確性。</li>
-        <li>🌌 **宇宙射線觀測 (Cosmic Rays Observations)** - 高能物理學研究質能轉換現象。</li>
-    </ul>
 </section>
 
-<section>
-    <h2>📊 觀測數據比對 | Observational Data Comparison</h2>
-    <p>質能方程的驗證來自不同實驗：</p>
-    <ul>
-        <li>🌍 **原子彈試驗 (Nuclear Tests)** - 核爆釋放的能量與 E=mc² 預測相符。</li>
-        <li>🚀 **LHC (大型強子對撞機)** - 質量轉換為能量的高能粒子物理實驗。</li>
-    </ul>
-</section>
-
-<section>
-    <h2>📚 參考文獻 & 數據來源 | References & Data Sources</h2>
-    <ul>
-        <li>📖 愛因斯坦原始論文《Zur Elektrodynamik bewegter Körper》 (1905)</li>
-        <li>🌐 <a href="https://arxiv.org/abs/1901.00001">arXiv:1901.00001</a> - 核能與粒子物理的質能轉換研究</li>
-    </ul>
-</section>
-
-<footer>
-    <p>© 2025 赫爾斯盾場研究 | HerShield Field Research</p>
+<footer class="contact">
+    <p>創作者 | Author: Kru, Yupin Su.</p>
     <p>
         📧 Email: kruzi.eemc2@gmail.com |
-        🔗 <a href="https://www.linkedin.com">LinkedIn</a> |
-        📘 <a href="https://www.facebook.com">Facebook</a> |
-        📷 <a href="https://www.instagram.com">Instagram</a>
+        🔗 <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a>
     </p>
 </footer>
 
