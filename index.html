@@ -20,16 +20,15 @@
             margin: auto;
             width: 100%;
             text-align: center;
-            font-size: 1.5em; /* 放大方程 */
+        }
+        #equationDisplay img {
+            max-width: 800px; /* 放大 2 倍 */
+            margin-top: 20px;
+            filter: invert(100%); /* 讓數學公式變成白色 */
         }
         #navigation, #equationList {
             text-align: left;
             padding-left: 20px;
-        }
-        img {
-            max-width: 400px;
-            margin-top: 20px;
-            filter: invert(100%);
         }
         .container {
             display: flex;
@@ -37,13 +36,8 @@
             align-items: flex-start;
             padding: 20px;
         }
-        .math-section {
-            width: 45%;
-            text-align: left;
-            padding: 10px;
-        }
-        .explanation-section {
-            width: 45%;
+        .math-section, .explanation-section {
+            width: 50%;
             text-align: left;
             padding: 10px;
         }
@@ -89,21 +83,21 @@
 
 <div class="container">
     <section class="math-section">
-        <h2>📐 核心方程 ➜ 帶入組合 ➜ 計算演算 ➜ 右側答案</h2>
+        <h2>📐 數學解析 | Mathematical Derivation</h2>
         <p id="mathDerivation">請選擇一個待解方程 | Select an equation to solve</p>
         <h3>符號解析 | Symbol Explanation</h3>
-        <p id="symbolExplanation">這裡將顯示選定方程的每個符號代表什麼。</p>
+        <p id="symbolExplanation">將顯示該方程每個符號的意義。</p>
         <h3>應用範圍 | Application</h3>
-        <p id="applicationExplanation">這裡將顯示該方程的應用場景。</p>
+        <p id="applicationExplanation">將顯示該方程的應用場景。</p>
     </section>
 
     <section class="explanation-section">
         <h2>📖 解析 | Explanation</h2>
         <p id="equationExplanation">請選擇一個方程來查看解析</p>
         <h3>解開什麼？ | What does this equation solve?</h3>
-        <p id="solutionExplanation">這裡將顯示該方程可以解決的物理問題。</p>
+        <p id="solutionExplanation">該方程解釋的物理問題。</p>
         <h3>赫盾場的關聯 | HerShield Field Connection</h3>
-        <p id="HerShieldConnection">這裡將解釋該方程如何與赫爾斯盾場相關。</p>
+        <p id="HerShieldConnection">該方程與赫盾場的關聯。</p>
     </section>
 </div>
 
@@ -123,25 +117,25 @@
             `<img src="assets/${equationFile}" alt="${equationName}">`;
 
         document.getElementById("mathDerivation").innerHTML =
-            `現在顯示的是：${equationName} 的數學解析`;
+            `目前顯示的是：${equationName} 的數學解析`;
 
         document.getElementById("equationExplanation").innerHTML =
-            `${equationName} 是當前研究的關鍵物理方程，正在進行解析與驗證。`;
+            `${equationName} 是物理學中的核心方程，適用於 XXXX 研究。`;
 
         document.getElementById("symbolExplanation").innerHTML =
-            `這裡會列出 ${equationName} 的所有變數代表的意義`;
+            `${equationName} 的所有變數代表的意義：...`;
 
         document.getElementById("applicationExplanation").innerHTML =
             `${equationName} 主要應用在 XXXX 領域，例如 XXXX`;
 
         document.getElementById("solutionExplanation").innerHTML =
-            `這個方程解開了 XXXX 問題，並在 XXXX 領域有所應用。`;
+            `該方程解釋了 XXXX 物理現象。`;
 
         document.getElementById("HerShieldConnection").innerHTML =
-            `${equationName} 可能與赫盾場的 XXXX 機制有關，透過 XXXX 影響 XXXX。`;
+            `${equationName} 與赫盾場的關聯為 XXXX。`;
 
         document.getElementById("answerResult").innerHTML =
-            `計算結果：XXX (後續將由數學計算模組補充)`;
+            `計算結果：XXX (數學計算模組將補充)`;
     }
 </script>
 
