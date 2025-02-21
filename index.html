@@ -8,39 +8,46 @@
     <script src="assets/js/script.js" defer></script>
     <style>
         body {
-            color: white;  
-            font-weight: bold; 
-            background-color: black;
+            color: white;
+            font-weight: bold;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: black;
         }
         h1, h2, h3 {
-            color: #FFD700;
+            color: #FFD700; /* 金黃色標題 */
         }
-        #mainContainer {
-            display: flex;
-            width: 90%;
-        }
-        #leftContainer {
-            width: 30%;
-            text-align: left;
-            padding: 10px;
-        }
-        #centerContainer {
-            width: 40%;
+        #equationDisplay {
+            margin: auto;
+            width: 100%;
             text-align: center;
-            padding: 10px;
         }
-        #rightContainer {
-            width: 30%;
+        #navigation {
             text-align: left;
-            padding: 10px;
+            padding-left: 20px;
+        }
+        #equationList {
+            text-align: left;
+            padding-left: 20px;
         }
         img {
-            max-width: 90%;
-            filter: invert(1);  /* 讓黑底的數學圖片變白色 */
+            max-width: 300px;
+            margin-top: 20px;
+            filter: invert(100%); /* 讓黑底上的數學圖片變白 */
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        .math-section {
+            width: 45%;
+            text-align: left;
+            padding: 10px;
+        }
+        .explanation-section {
+            width: 45%;
+            text-align: left;
+            padding: 10px;
         }
     </style>
 </head>
@@ -49,44 +56,51 @@
 <header>
     <h1>赫爾斯盾場方程 | HerShield Equation</h1>
     <p>🚀 核心方程：</p>
+    <div id="equationDisplay">
+        <img src="assets/FHe.svg" alt="HerShield Field Equation">
+    </div>
 </header>
 
-<div id="mainContainer">
-    <!-- 左側導覽 -->
-    <section id="leftContainer">
-        <h2>🔍 導覽 | Navigation</h2>
-        <ul>
-            <li>📂 <a href="docs/data_dashboard.html">數據庫 | Data Database</a></li>
-            <li>🔬 <a href="docs/GR_Calculations.html">廣義相對論計算 | GR Calculations</a></li>
-            <li>🧬 <a href="docs/Quantum_Calculations.html">量子力學計算 | Quantum Calculations</a></li>
-            <li>🖊️ <a href="#">暗物質計算 | Dark Matter</a></li>
-            <li>🛡️ <a href="#">赫爾斯盾場 | HerShield Field</a></li>
-        </ul>
-    </section>
+<section id="navigation">
+    <h2>🔍 導覽 | Navigation</h2>
+    <ul>
+        <li>📂 <a href="docs/data_dashboard.html">數據庫 | Data Database</a></li>
+        <li>🔬 <a href="docs/GR_Calculations.html">廣義相對論計算 | GR Calculations</a></li>
+        <li>🧬 <a href="docs/Quantum_Calculations.html">量子力學計算 | Quantum Calculations</a></li>
+        <li>🖊️ <a href="#">暗物質計算 | Dark Matter</a></li>
+        <li>🛡️ <a href="#">赫爾斯盾場 | HerShield Field</a></li>
+    </ul>
+</section>
 
-    <!-- 中間數學方程顯示區 -->
-    <section id="centerContainer">
-        <div id="equationDisplay">
-            <img src="assets/FHe.svg" alt="HerShield Field Equation">
-        </div>
-        <h2>📜 人類待解的方程 | Unsolved Physics Equations</h2>
-        <ul>
-            <li><a href="#" onclick="changeEquation('EField.svg', '質能方程')">質能方程 | Mass-Energy Equation</a></li>
-            <li><a href="#" onclick="changeEquation('Schrödinger_Equation.svg', '薛定諤方程')">薛定諤方程 | Schrödinger Equation</a></li>
-            <li><a href="#" onclick="changeEquation('Navier-Stokes.svg', 'Navier-Stokes 方程')">Navier-Stokes 方程</a></li>
-            <li><a href="#" onclick="changeEquation('TRSymmetry.svg', '量子引力方程')">量子引力方程 | Quantum Gravity Equation</a></li>
-            <li><a href="#" onclick="changeEquation('Dm_motion.svg', '暗物質運動方程')">暗物質運動方程 | Dark Matter Motion Equation</a></li>
-            <li><a href="#" onclick="changeEquation('Schrödingertime.svg', '時間反演方程')">時間反演方程 | Time Reversal Equation</a></li>
-        </ul>
-    </section>
+<section id="equationList">
+    <h2>📜 人類待解的方程 | Unsolved Physics Equations</h2>
+    <ul>
+        <li><a href="#" onclick="changeEquation('EField.svg', '質能方程')">質能方程 | Mass-Energy Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Schrödinger_Equation.svg', '薛定諤方程')">薛定諤方程 | Schrödinger Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Navier-Stokes.svg', 'Navier-Stokes 方程')">Navier-Stokes 方程</a></li>
+        <li><a href="#" onclick="changeEquation('TRSymmetry.svg', '量子引力方程')">量子引力方程 | Quantum Gravity Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Dm_motion.svg', '暗物質運動方程')">暗物質運動方程 | Dark Matter Motion Equation</a></li>
+        <li><a href="#" onclick="changeEquation('Schrödingertime.svg', '時間反演方程')">時間反演方程 | Time Reversal Equation</a></li>
+    </ul>
+</section>
 
-    <!-- 右側方程說明 -->
-    <section id="rightContainer">
+<div class="container">
+    <section class="math-section">
         <h2>📐 數學解析 | Mathematical Derivation</h2>
         <p id="mathDerivation">請選擇一個待解方程 | Select an equation to solve</p>
+        <h3>符號解析 | Symbol Explanation</h3>
+        <p id="symbolExplanation">這裡將顯示選定方程的每個符號代表什麼。</p>
+        <h3>應用範圍 | Application</h3>
+        <p id="applicationExplanation">這裡將顯示該方程的應用場景。</p>
+    </section>
 
+    <section class="explanation-section">
         <h2>📖 解析 | Explanation</h2>
         <p id="equationExplanation">請選擇一個方程來查看解析</p>
+        <h3>解開什麼？ | What does this equation solve?</h3>
+        <p id="solutionExplanation">這裡將顯示該方程可以解決的物理問題。</p>
+        <h3>赫盾場的關聯 | HerShield Field Connection</h3>
+        <p id="HerShieldConnection">這裡將解釋該方程如何與赫爾斯盾場相關。</p>
     </section>
 </div>
 
@@ -97,25 +111,26 @@
 
 <script>
     function changeEquation(equationFile, equationName) {
-        // 更新數學方程圖片
         document.getElementById("equationDisplay").innerHTML =
             `<img src="assets/${equationFile}" alt="${equationName}">`;
-
-        // 更新數學解析說明
-        let equationDetails = {
-            "EField.svg": "質能方程描述了質量與能量的等價性，E=mc² 是愛因斯坦相對論的重要基礎。",
-            "Schrödinger_Equation.svg": "薛定諤方程是量子力學的核心方程，用來描述粒子的波函數演化。",
-            "Navier-Stokes.svg": "Navier-Stokes 方程描述了流體力學中的運動，是研究湍流與氣象的重要基礎。",
-            "TRSymmetry.svg": "時間反演對稱方程研究物理過程在時間反轉時的對稱性。",
-            "Dm_motion.svg": "暗物質運動方程試圖解釋暗物質在宇宙中的分佈與行為。",
-            "Schrödingertime.svg": "這是一個修正版本的薛定諤方程，涉及時間反演的影響。"
-        };
 
         document.getElementById("mathDerivation").innerHTML =
             `現在顯示的是：${equationName} 的數學解析`;
 
         document.getElementById("equationExplanation").innerHTML =
-            equationDetails[equationFile] || "此方程仍在研究中，尚未有完整的解析。";
+            `${equationName} 是當前研究的關鍵物理方程，正在進行解析與驗證。`;
+
+        document.getElementById("symbolExplanation").innerHTML =
+            `這裡會列出 ${equationName} 的所有變數代表的意義`;
+
+        document.getElementById("applicationExplanation").innerHTML =
+            `${equationName} 主要應用在 XXX 領域，例如 XXXX`;
+
+        document.getElementById("solutionExplanation").innerHTML =
+            `這個方程解開了 XXXX 問題，並在 XXXX 領域有所應用。`;
+
+        document.getElementById("HerShieldConnection").innerHTML =
+            `${equationName} 可能與赫盾場的 XXXX 機制有關，透過 XXXX 影響 XXXX。`;
     }
 </script>
 
