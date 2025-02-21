@@ -1,53 +1,57 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>赫爾斯盾場方程 | HerShield Equation</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="home-link">🏠 回首頁 | Home</a>
+        <h1>赫爾斯盾場方程 | HerShield Equation</h1>
+        <p>📌 核心方程：</p>
+        <img src="assets/equations/equation_fixed_1.png" class="equation-img" alt="赫爾斯盾場方程">
     </header>
 
-    <div class="container">
-        <!-- 赫盾方程顯示 -->
-        <div class="equation-section">
-            <h1>赫爾斯盾場方程 | HerShield Equation</h1>
-            <img src="png/hershield_equation.png" alt="HerShield Equation">
-        </div>
-
-        <!-- 右側方程選擇 -->
-        <div class="equation-list">
-            <h2>📜 人類待解的方程 | Unsolved Physics Equations</h2>
+    <main>
+        <section id="navigation">
+            <h2>📖 導覽 | Navigation</h2>
             <ul>
-                <li><a href="#" onclick="combineEquation('mass_energy')">$$E = mc^2$$ | 質能方程 | Mass-Energy Equation</a></li>
-                <li><a href="#" onclick="combineEquation('schrodinger')">$$\hat{H} \Psi = E \Psi$$ | 薛丁格方程 | Schrödinger Equation</a></li>
-                <li><a href="#" onclick="combineEquation('navier_stokes')">Navier-Stokes 方程 | Navier-Stokes Equation</a></li>
-                <li><a href="#" onclick="combineEquation('quantum_gravity')">量子引力方程 | Quantum Gravity Equation</a></li>
-                <li><a href="#" onclick="combineEquation('dark_matter')">暗物質運動方程 | Dark Matter Motion Equation</a></li>
-                <li><a href="#" onclick="combineEquation('time_reversal')">時間反演方程 | Time Reversal Equation</a></li>
+                <li><a href="data_database.html">📊 數據庫 | Data Database</a></li>
+                <li><a href="gr_calculations.html">📚 廣義相對論計算 | GR Calculations</a></li>
+                <li><a href="quantum_calculations.html">🔬 量子力學計算 | Quantum Calculations</a></li>
+                <li><a href="dark_matter.html">🧪 暗物質計算 | Dark Matter</a></li>
+                <li><a href="hershield_field.html">🛡️ 赫爾斯盾場 | HerShield Field</a></li>
             </ul>
-        </div>
+        </section>
 
-        <!-- 組合計算區 -->
-        <div class="calculation-section">
+        <section id="unsolved-equations">
+            <h2>📌 人類待解的方程 | Unsolved Physics Equations</h2>
+            <ul>
+                <li><a href="#" onclick="updateEquation(1)">$$ E = mc^2 $$ | 質能方程 | Mass-Energy Equation</a></li>
+                <li><a href="#" onclick="updateEquation(2)">$$ \hat{H} \Psi = E \Psi $$ | 薛丁格方程 | Schrödinger Equation</a></li>
+                <li><a href="#" onclick="updateEquation(3)">Navier-Stokes 方程 | Navier-Stokes Equation</a></li>
+                <li><a href="#" onclick="updateEquation(4)">量子引力方程 | Quantum Gravity Equation</a></li>
+                <li><a href="#" onclick="updateEquation(5)">暗物質運動方程 | Dark Matter Motion Equation</a></li>
+                <li><a href="#" onclick="updateEquation(6)">時間反演方程 | Time Reversal Equation</a></li>
+            </ul>
+        </section>
+
+        <section id="math-derivation">
             <h2>📐 數學解析 | Mathematical Derivation</h2>
-            <div id="combined-equation">
-                <p>請選擇一個待解方程 | Select an equation to solve</p>
-            </div>
+            <p>請選擇一個待解方程 | Select an equation to solve</p>
+            <img id="math-equation-img" src="" class="equation-img" alt="組合方程">
+        </section>
 
+        <section id="explanation">
             <h2>📖 解析 | Explanation</h2>
-            <div id="equation-explanation">
-                <p>請選擇一個方程來查看解析</p>
-            </div>
-        </div>
-    </div>
+            <p id="equation-explanation">請選擇一個方程來查看解析</p>
+        </section>
 
-    <!-- 底部聯絡資訊 -->
+    </main>
+
     <footer>
         <p>© 2025 赫爾斯盾場研究 | HerShield Field Research</p>
         <p>
