@@ -2,66 +2,109 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Navier-Stokes 方程</title>
-    <style>
-        body { text-align: center; background-color: black; color: white; }
-        img { max-width: 800px; filter: invert(100%); }
-    </style>
-</head>
-<body>
-    <h1>Navier-Stokes 方程</h1>
-    <img src="../assets/Navier-Stokes.svg" alt="Navier-Stokes Equation">
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navier-Stokes 方程 | Navier-Stokes Equation</title>
+    <title>Navier-Stokes 方程與赫爾斯盾場 | Navier-Stokes Equation & HerShield Field</title>
     <script type="text/javascript" async
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
     <style>
-        body { background-color: black; color: white; font-family: Arial, sans-serif; }
+        body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
         h1, h2 { color: white; }
-        p { color: white; text-align: left; }
-        .math { text-align: center; color: white; }
-        .contact { text-align: center; margin-top: 40px; }
+        p { color: white; max-width: 800px; margin: 0 auto; text-align: justify; }
+        .math { text-align: center; color: white; font-size: 1.3em; margin: 20px 0; }
+        .contact { margin-top: 40px; }
         .contact a { color: #1e90ff; margin: 0 10px; text-decoration: none; }
+        .nav-links { margin-top: 20px; }
+        .nav-links a { color: #1e90ff; margin: 0 15px; text-decoration: none; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Navier-Stokes 方程 | Navier-Stokes Equation</h1>
+    <h1>Navier-Stokes 方程與赫爾斯盾場 | Navier-Stokes Equation & HerShield Field</h1>
 </header>
+
+<nav class="nav-links">
+    <a href="../index.html">🏠 首頁 | Home</a>
+    <a href="GR_Calculations.html">廣義相對論計算 | GR Calculations</a>
+    <a href="Quantum_Calculations.html">量子力學計算 | Quantum Mechanics</a>
+</nav>
 
 <section>
     <h2>📌 摘要 | Abstract</h2>
-    <p>Navier-Stokes 方程描述了流體的運動行為，應用於氣體動力學、等離子體物理等領域。</p>
-</section>
-
-<section class="math">
-    <h2>📐 公式 | Equation</h2>
-    <p>$$ \rho \left( \frac{\partial u}{\partial t} + u \cdot \nabla u \right) = -\nabla p + \mu \nabla^2 u + F $$</p>
+    <p>
+        Navier-Stokes 方程是流體力學的基礎方程，描述流體的運動行為：
+    </p>
+    <div class="math">
+        $$ \rho \left( \frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} \right) = - \nabla p + \mu \nabla^2 \mathbf{u} + \mathbf{f} $$
+    </div>
+    <p>
+        然而，該方程的完整解仍然是一個數學難題，尤其是湍流模型的描述仍未被完全解析。赫爾斯盾場 (HerShield Field, FHe) 提供了一種新的流體動力學修正方法，可影響流體的穩定性與動能傳遞。
+    </p>
 </section>
 
 <section>
-    <h2>🔬 赫爾斯盾場影響 | HerShield Field Interaction</h2>
-    <p>赫爾斯盾場影響 Navier-Stokes 方程，影響恆星風和星際物質：</p>
-    <p>$$ \nabla \cdot F_{He} = \rho ( \nabla \cdot u ) $$</p>
+    <h2>📐 赫爾斯盾場影響 | HerShield Field Interaction</h2>
+    <p>
+        赫盾場影響 Navier-Stokes 方程的方式可表示為：
+    </p>
+    <div class="math">
+        $$ \mathbf{f} = F_{He} = \nabla \times (B + E) - \frac{\partial E}{\partial t} $$
+    </div>
+    <p>
+        這代表：
+        <br> - **赫盾場的磁場成分 \( B \)** 影響帶電粒子的流動方式。
+        <br> - **赫盾場的電場成分 \( E \)** 可調控等離子體流體的運動行為。
+        <br> - **時間變化項 \( \frac{\partial E}{\partial t} \)** 可能影響流體的穩定性和層流/湍流轉變。
+    </p>
 </section>
 
 <section>
     <h2>🧪 應用 | Applications</h2>
-    <p>1. **太陽風動力學** - 研究赫爾斯盾場如何影響太陽風密度變化。</p>
-    <p>2. **星際介質傳輸** - 分析赫盾場對星際氣體雲的影響。</p>
+    <p>
+        赫爾斯盾場對 Navier-Stokes 方程的影響可能應用於：
+    </p>
+    <p>
+        **1️⃣ 星際氣體運動 (Interstellar Gas Motion)**
+        <br> - 赫盾場可影響恆星風、星際介質流動，改變天體形成機制。
+    </p>
+    <p>
+        **2️⃣ 等離子體物理 (Plasma Physics)**
+        <br> - 赫盾場可能對太陽風、等離子體流動產生修正，使流體行為更可控。
+    </p>
+    <p>
+        **3️⃣ 黑洞吸積盤動力學 (Black Hole Accretion Disk)**
+        <br> - 黑洞吸積盤內的流體運動可能受到赫盾場修正，使流體更穩定或更不穩定。
+    </p>
+    <p>
+        **4️⃣ 湍流建模 (Turbulence Modeling)**
+        <br> - 赫盾場可能提供新的湍流公式，減少湍流的不確定性，提高預測準確度。
+    </p>
+</section>
+
+<section>
+    <h2>📊 數學推導與驗證 | Mathematical Derivation & Validation</h2>
+    <p>
+        **Navier-Stokes 方程的修正：**
+        <br> 假設赫盾場影響流體內部的壓力分佈，我們引入額外的修正壓力：
+    </p>
+    <div class="math">
+        $$ p' = p + F_{He} \cdot \rho $$
+    </div>
+    <p>
+        則修正後的 Navier-Stokes 方程為：
+    </p>
+    <div class="math">
+        $$ \rho \left( \frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} \right) = - \nabla (p + F_{He} \cdot \rho) + \mu \nabla^2 \mathbf{u} + \mathbf{f} $$
+    </div>
+    <p>
+        這個新方程可能對**超流體、等離子體流動、黑洞吸積盤建模**產生影響。我們可以透過數值模擬來驗證赫盾場的影響，觀察流體的穩定性與層流/湍流轉變點。
+    </p>
 </section>
 
 <footer class="contact">
     <p>創作者 | Author: Kru, Yupin Su.</p>
-    <p>📧 Email: kruzi.eemc2@gmail.com | 🔗 <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+    <p>📧 Email: kruzi.eemc2@gmail.com | 🔗 <a href="../index.html">首頁</a> | <a href="GR_Calculations.html">GR 計算</a> | <a href="Quantum_Calculations.html">量子計算</a></p>
 </footer>
 
 </body>
