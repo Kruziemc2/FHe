@@ -27,6 +27,10 @@
             text-align: left;
             padding: 10px;
         }
+        .equation-image {
+            max-width: 500px;
+            filter: invert(100%); /* 讓數學公式在黑色背景上可見 */
+        }
     </style>
 </head>
 <body>
@@ -35,31 +39,31 @@
     <h1>赫爾斯盾場方程 | HerShield Equation</h1>
     <p>🚀 **核心方程**：</p>
     <div id="equationDisplay">
-        <a href="docs/FHe.html" target="_blank">📄 查看赫盾場核心方程</a>
+        <img id="equationImage" src="assets/FHe.svg" alt="HerShield Field Equation" class="equation-image">
     </div>
 </header>
 
 <section id="equationList">
     <h2>📜 人類待解的方程 | Unsolved Physics Equations</h2>
     <ul>
-        <li><a href="docs/EField.html" target="_blank">📄 質能方程 | Mass-Energy Equation</a></li>
-        <li><a href="docs/Schrodinger_Equation.html" target="_blank">📄 薛定諤方程 | Schrödinger Equation</a></li>
-        <li><a href="docs/Navier-Stokes.html" target="_blank">📄 Navier-Stokes 方程</a></li>
-        <li><a href="docs/TRSymmetry.html" target="_blank">📄 量子引力方程 | Quantum Gravity Equation</a></li>
-        <li><a href="docs/Dm_motion.html" target="_blank">📄 暗物質運動方程 | Dark Matter Motion Equation</a></li>
-        <li><a href="docs/Schrodinger_time.html" target="_blank">📄 時間反演方程 | Time Reversal Equation</a></li>
+        <li><a href="#" onclick="changeEquation('assets/EField.svg', '質能方程 | Mass-Energy Equation')">📄 質能方程 | Mass-Energy Equation</a></li>
+        <li><a href="#" onclick="changeEquation('assets/Schrödinger_Equation.svg', '薛定諤方程 | Schrödinger Equation')">📄 薛定諤方程 | Schrödinger Equation</a></li>
+        <li><a href="#" onclick="changeEquation('assets/Navier-Stokes.svg', 'Navier-Stokes 方程')">📄 Navier-Stokes 方程</a></li>
+        <li><a href="#" onclick="changeEquation('assets/TRSymmetry.svg', '量子引力方程 | Quantum Gravity Equation')">📄 量子引力方程 | Quantum Gravity Equation</a></li>
+        <li><a href="#" onclick="changeEquation('assets/Dm_motion.svg', '暗物質運動方程 | Dark Matter Motion Equation')">📄 暗物質運動方程 | Dark Matter Motion Equation</a></li>
+        <li><a href="#" onclick="changeEquation('assets/Schrödinger_time.svg', '時間反演方程 | Time Reversal Equation')">📄 時間反演方程 | Time Reversal Equation</a></li>
     </ul>
 </section>
 
 <div class="container">
     <section class="math-section">
         <h2>📐 數學解析 | Mathematical Derivation</h2>
-        <p id="mathDerivation">請點選上方連結，在新視窗查看數學方程。</p>
+        <p id="mathDerivation">請點選上方連結，查看數學方程。</p>
     </section>
 
     <section class="explanation-section">
         <h2>📖 解析 | Explanation</h2>
-        <p id="equationExplanation">該方程的解析和應用，請點擊連結後查看。</p>
+        <p id="equationExplanation">點擊數學公式時，這裡會顯示該方程的解析和應用。</p>
     </section>
 </div>
 
@@ -67,6 +71,14 @@
     <p>© 2025 赫爾斯盾場研究 | HerShield Field Research</p>
     <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a> | 📧 Email: kruzi.eemc2@gmail.com
 </footer>
+
+<script>
+    function changeEquation(imageSrc, equationName) {
+        document.getElementById("equationImage").src = imageSrc;
+        document.getElementById("mathDerivation").innerText = "目前顯示的數學公式：" + equationName;
+        document.getElementById("equationExplanation").innerText = equationName + " 是物理學中待解的問題，正進行解析與驗證。";
+    }
+</script>
 
 </body>
 </html>
