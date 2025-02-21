@@ -1,151 +1,123 @@
 <!DOCTYPE html>
-<footer>
-    <p>© 2025 <strong>Kru Su</strong> | 赫爾斯盾場研究創建者</p>
-</footer>
-<html lang="zh-TW">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>赫爾斯盾場 數據分析</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            text-align: center;
-        }
-        h1 {
-            color: #FFD700;
-        }
-        .data-section {
-            margin: 20px;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #1e1e1e;
-        }
-        .data-item {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .chart-container {
-            width: 80%;
-            margin: auto;
-        }
-    </style>
-    <script>
-        async function fetchData() {
-                const API_KEY ="UlxbY1TIgdhFZkW4FgeIcrOa3Ttb4TVYU4W3nV3S"; // 在這裡替換為你的 API Key
-            const API_URL = "https://api.solarsystemdata.com/v1/solarwind";
-
-            try {
-                const response = await fetch(API_URL, {
-                    headers: { "Authorization": `Bearer ${UlxbY1TIgdhFZkW4FgeIcrOa3Ttb4TVYU4W3nV3S}` }
-                });
-                const data = await response.json();
-
-                document.getElementById("solarwind").innerHTML = `🌞 太陽風速度: ${data.velocity} km/s`;
-                document.getElementById("magnetic").innerHTML = `🧲 磁場強度: ${data.magnetic} nT`;
-                document.getElementById("density").innerHTML = `🌌 粒子密度: ${data.density} cm³`;
-                document.getElementById("radiation").innerHTML = `☢ 高能粒子輻射: ${data.sep_flux} flux`;
-
-                // 更新數據歷史
-                updateHistory(data);
-            } catch (error) {
-                console.error("獲取數據失敗", error);
-            }
-        }
-
-        let historyData = [];
-
-        function updateHistory(newData) {
-            if (historyData.length >= 5) historyData.shift();
-            historyData.push({
-                time: new Date().toLocaleTimeString(),
-                velocity: newData.velocity,
-                magnetic: newData.magnetic,
-                density: newData.density,
-                radiation: newData.sep_flux
-            });
-
-            let historyHTML = "<h3>📜 過去數據</h3><ul>";
-            historyData.forEach(entry => {
-                historyHTML += `<li>${entry.time} | 風速: ${entry.velocity} km/s | 磁場: ${entry.magnetic} nT | 密度: ${entry.density} cm³ | 輻射: ${entry.radiation} flux</li>`;
-            });
-            historyHTML += "</ul>";
-            document.getElementById("history").innerHTML = historyHTML;
-        }
-
-        setInterval(fetchData, 5000); // 每 5 秒更新一次數據
+    <title>實時觀測數據 | Data Analysis & Real-Time Space Data</title>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-</head>
-<body onload="fetchData()">
-    <h1>赫爾斯盾場 數據分析</h1>
-    <p>此頁面顯示來自 Solar System API 的**即時數據**。</p>
-
-    <div class="data-section">
-        <h2>📡 即時數據</h2>
-        <p class="data-item" id="solarwind">載入中...</p>
-        <p class="data-item" id="magnetic">載入中...</p>
-        <p class="data-item" id="density">載入中...</p>
-        <p class="data-item" id="radiation">載入中...</p>
-    </div>
-
-    <div class="data-section" id="history">
-        <h2>📜 過去數據</h2>
-        <p>數據即將顯示...</p>
-    </div>
-
-    <div class="chart-container">
-        <h2>📊 數據趨勢</h2>
-        <canvas id="dataChart"></canvas>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        let chartData = {
-            labels: [],
-            datasets: [{
-                label: '太陽風速度 (km/s)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                data: []
-            }]
-        };
+    <style>
+        body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
+        h1, h2 { color: white; }
+        p { color: white; max-width: 900px; margin: 0 auto; text-align: justify; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .box { width: 45%; margin: 10px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        canvas { max-width: 100%; background: white; border-radius: 5px; }
+        .contact { margin-top: 40px; }
+        .contact a { color: #1e90ff; margin: 0 10px; text-decoration: none; }
+        .nav { text-align: center; margin-bottom: 20px; }
+        .nav a { color: #00bfff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
 
-        let ctx = document.getElementById("dataChart").getContext("2d");
-        let dataChart = new Chart(ctx, {
-            type: "line",
-            data: chartData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: { beginAtZero: false }
-                }
-            }
+<header>
+    <h1>實時觀測數據 | Data Analysis & Real-Time Space Data</h1>
+    <div class="nav">
+        🔙 <a href="../index.html">首頁 | Home</a> |
+        ☀️ <a href="Solar_Data.html">太陽數據 | Solar Data</a> |
+        🌍 <a href="Earth_Data.html">地球數據 | Earth Data</a> |
+        🌑 <a href="Moon_Data.html">月球數據 | Moon Data</a>
+    </div>
+</header>
+
+<section>
+    <h2>📌 主要觀測數據 | Key Observational Data</h2>
+    <p>
+        此頁面提供來自官方機構的即時數據，包括 **NASA、NOAA、ESA、USGS**，數據來自各種監測衛星與探測器，並會 **每 15 秒自動更新**。
+    </p>
+</section>
+
+<div class="container">
+    <div class="box">
+        <h2>🌞 太陽風數據 | Solar Wind Data</h2>
+        <p>來自 NASA ACE 衛星 (Advanced Composition Explorer) 的最新數據：</p>
+        <iframe src="https://services.swpc.noaa.gov/images/ace-swepam-density.gif" width="100%" height="300px"></iframe>
+        <p>☀️ 太陽風速度: <span id="solar_wind_speed">Loading...</span> km/s</p>
+        <p>⚡ 電漿密度: <span id="solar_wind_density">Loading...</span> p/cm³</p>
+    </div>
+
+    <div class="box">
+        <h2>🌍 地球磁場變化 | Earth's Magnetic Field</h2>
+        <p>來自 NOAA 的地磁指數圖表：</p>
+        <iframe src="https://services.swpc.noaa.gov/images/planetary-k-index.gif" width="100%" height="300px"></iframe>
+        <p>🌎 K 指數: <span id="k_index">Loading...</span></p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box">
+        <h2>📈 太陽黑子數量 | Sunspot Activity</h2>
+        <canvas id="sunspot_chart"></canvas>
+    </div>
+
+    <div class="box">
+        <h2>🚀 國際太空站位置 | ISS Live Location</h2>
+        <p>即時追蹤國際太空站 (ISS) 位置：</p>
+        <iframe src="https://www.n2yo.com/iframe/?s=25544&c=iss" width="100%" height="300px"></iframe>
+    </div>
+</div>
+
+<script>
+    async function fetchData() {
+        // API Key
+        const apiKey = "YOUR_API_KEY";  // 請替換為你的 API Key
+
+        // 1. 獲取太陽風數據 (Solar Wind Data)
+        const solarWindUrl = `https://api.nasa.gov/DONKI/FLR?api_key=${apiKey}`;
+        let solarWindResponse = await fetch(solarWindUrl);
+        let solarWindData = await solarWindResponse.json();
+        document.getElementById("solar_wind_speed").innerText = solarWindData[0]?.speed || "N/A";
+        document.getElementById("solar_wind_density").innerText = solarWindData[0]?.density || "N/A";
+
+        // 2. 獲取地磁場 K 指數 (Kp Index)
+        const geomagneticUrl = `https://api.nasa.gov/DONKI/GST?api_key=${apiKey}`;
+        let geoResponse = await fetch(geomagneticUrl);
+        let geoData = await geoResponse.json();
+        document.getElementById("k_index").innerText = geoData[0]?.kp_index || "N/A";
+
+        // 3. 更新太陽黑子數據
+        updateSunspotChart();
+    }
+
+    function updateSunspotChart() {
+        let ctx = document.getElementById('sunspot_chart').getContext('2d');
+        let sunspotChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+                datasets: [{
+                    label: 'Sunspot Number',
+                    data: [45, 30, 60, 80, 75, 50], // 這些數據應該來自 API
+                    borderColor: 'yellow',
+                    borderWidth: 2
+                }]
+            },
+            options: { responsive: true }
         });
+    }
 
-        function updateChart(newData) {
-            if (chartData.labels.length >= 10) {
-                chartData.labels.shift();
-                chartData.datasets[0].data.shift();
-            }
-            chartData.labels.push(new Date().toLocaleTimeString());
-            chartData.datasets[0].data.push(newData.velocity);
+    // 每 15 秒更新數據
+    setInterval(fetchData, 15000);
+    fetchData();
+</script>
 
-            dataChart.update();
-        }
+<footer class="contact">
+    <p>創作者 | Author: Kru, Yupin Su.</p>
+    <p>📧 Email: kruzi.eemc2@gmail.com | 🔗 <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+</footer>
 
-        setInterval(() => {
-            fetch("https://api.solarsystemdata.com/v1/solarwind", {
-                headers: { "Authorization": "Bearer UlxbY1TIgdhFZkW4FgeIcrOa3Ttb4TVYU4W3nV3S" }
-            })
-            .then(response => response.json())
-            .then(data => {
-                updateChart(data);
-            })
-            .catch(error => console.error("無法獲取新數據", error));
-        }, 5000);
-    </script>
 </body>
 </html>
